@@ -1,4 +1,4 @@
-package com.linkflix.entity;
+package com.linkflix.db.entity;
 
 import lombok.Getter;
 import lombok.Setter;
