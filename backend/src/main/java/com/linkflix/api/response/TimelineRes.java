@@ -5,8 +5,6 @@ import io.swagger.annotations.ApiModel;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Time;
-
 @Getter
 @Setter
 @ApiModel("TimelineResponse")
@@ -14,7 +12,7 @@ public class TimelineRes {
 
     Long id;
     Product product;
-    Time startTime;
-    Time endTime;
+    String startTime;
+    String endTime;
 
 }

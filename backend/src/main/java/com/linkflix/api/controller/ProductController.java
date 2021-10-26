@@ -1,6 +1,6 @@
 package com.linkflix.api.controller;
 
-import com.linkflix.api.response.ProductRes;
+import com.linkflix.api.request.ProductReq;
 import com.linkflix.api.service.ProductService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
 
 @Api(value = "상품(Product) API", tags = {"Product"})
 @CrossOrigin
@@ -22,11 +20,11 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping(value = "/regist")
-    public ResponseEntity<ProductRes> registProduct(@RequestPart MultipartFile file) throws Exception {
-        ProductRes productRes = new ProductRes();
-
+    public ResponseEntity<String> registProduct(@RequestParam("file") MultipartFile file, ProductReq productReq) throws Exception {
         log.info("POST /prdoucts/regist");
-        return ResponseEntity.status(200).body(productRes);
+
+        String uuid = productService.saveProduct(file, productReq);
+        return ResponseEntity.status(200).body(uuid);
     }
 }
 

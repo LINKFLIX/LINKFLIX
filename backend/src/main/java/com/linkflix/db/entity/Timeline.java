@@ -1,13 +1,14 @@
 package com.linkflix.db.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-import java.sql.Time;
 
+@Data
 @Entity(name="timelines")
 @Getter
 @Setter
@@ -19,7 +20,14 @@ public class Timeline extends BaseEntity {
     Product product;
 
     private String netflixEpisodeId;
-    private Time startTime;
-    private Time endTime;
+    private String startTime;
+    private String endTime;
 
+    public Timeline() {}
+    public Timeline(Product product, String netflixEpisodeId, String startTime, String endTime) {
+        this.product = product;
+        this.netflixEpisodeId = netflixEpisodeId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 }

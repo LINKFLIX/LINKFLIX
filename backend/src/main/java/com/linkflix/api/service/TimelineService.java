@@ -1,5 +1,6 @@
 package com.linkflix.api.service;
 
+import com.linkflix.api.request.TimelineReq;
 import com.linkflix.api.response.TimelineRes;
 import com.linkflix.db.entity.Timeline;
 
@@ -9,5 +10,5 @@ public interface TimelineService {
 
     TimelineRes selectTimeline(Long id);
     List<Timeline> getTimelineByNetflixEpisodeId(String netflixEpisodeId);
-
+    Timeline saveTimeline(TimelineReq timelineReq);
 }

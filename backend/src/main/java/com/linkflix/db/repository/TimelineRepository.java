@@ -10,5 +10,4 @@ import java.util.List;
 public interface TimelineRepository extends JpaRepository<Timeline, Long> {
 
     List<Timeline> findByNetflixEpisodeId(String netflixEpisodeId);
-
 }
