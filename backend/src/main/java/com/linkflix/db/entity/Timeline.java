@@ -8,7 +8,6 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
-@Data
 @Entity(name="timelines")
 @Getter
 @Setter

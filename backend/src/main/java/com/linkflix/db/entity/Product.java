@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Data
 @Entity(name="products")
 @Getter
 @Setter
