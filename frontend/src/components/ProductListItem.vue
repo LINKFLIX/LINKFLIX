@@ -31,16 +31,16 @@
             <small class="d-block text-muted text-truncate">{{
               joinTimelines(product.timeline)
             }}</small>
-            <h5 class="text-truncate m-0">
+            <h6 class="text-truncate m-0">
               {{ product.productName }}
-            </h5>
+            </h6>
             <div
               class="text-end d-flex flex-column justify-content-end"
               style="flex-grow: 1"
             >
-              <span>최저가</span>
+              <small>최저가</small>
               <div>
-                <h5 class="d-inline-block">
+                <h5 class="d-inline-block m-0">
                   {{ numWithComma(product.price) }}
                 </h5>
                 <small class="d-inline-block ms-1">원</small>
