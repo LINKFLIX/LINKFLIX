@@ -17,8 +17,7 @@ def linkflix():
     goods_soup = BeautifulSoup(requests.get(goods_url).content, 'html.parser')
     image_path = goods_soup.select('#__next > div > div.style_container__3iYev > div.style_inner__1Eo2z > div.style_content_wrap__2VTVx > div.style_content__36DCX > div > div.image_thumb_area__1dzNx > div.image_photo_area__44Fqz > div > img')[0]['src']
     data = {'id' : item_name, 'image_path' : image_path}
-    print(data)
-    return 'data'
+    return data
 
 if __name__ == "__main__":
     app.run()
