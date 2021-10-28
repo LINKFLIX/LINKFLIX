@@ -56,8 +56,12 @@ public class ProductController {
 
         Path path = null;
        try {
+           log.info("****check1******");
            path = Paths.get(imagePath);
+           log.info("****check2******");
            headers.add("Content-Type", Files.probeContentType(path));
+           log.info("****check3******");
+           log.info(Files.probeContentType(path));
        } catch (IOException e) {
            e.printStackTrace();
        }
