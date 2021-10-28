@@ -2,18 +2,23 @@ package com.linkflix.api.controller;
 
 import com.linkflix.api.request.ProductReq;
 import com.linkflix.api.request.ProductUpdateReq;
+import com.linkflix.api.response.ProductRes;
 import com.linkflix.api.service.ProductService;
 import com.linkflix.common.BaseResponse;
-import com.linkflix.db.entity.Product;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Optional;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Api(value = "상품(Product) API", tags = {"Product"})
 @CrossOrigin
@@ -26,27 +31,45 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping(value="/regist")
-    public ResponseEntity<Product> registProduct(@RequestParam("file") MultipartFile file, ProductReq productReq) throws Exception {
+    public ResponseEntity<ProductRes> registProduct(@RequestParam("file") MultipartFile file, ProductReq productReq) throws Exception {
         log.info("POST /products/regist");
 
-        Product product = productService.saveProduct(file, productReq);
-        return ResponseEntity.status(200).body(product);
+        ProductRes productRes = productService.saveProduct(file, productReq);
+        return ResponseEntity.status(200).body(productRes);
     }
 
     @GetMapping(value="/{productId}")
-    public ResponseEntity<Optional<Product>> getProduct(@PathVariable Long productId) {
+    public ResponseEntity<ProductRes> getProduct(@PathVariable Long productId) {
         log.info("GET /products/" + productId);
 
-        Optional<Product> product = productService.getProduct(productId);
-        return ResponseEntity.status(200).body(product);
+        ProductRes productRes = productService.getProduct(productId);
+        return ResponseEntity.status(200).body(productRes);
+    }
+
+    @GetMapping(value = "/image/{imageName}")
+    public ResponseEntity<byte[]> getImage(@PathVariable String imageName) {
+        String imagePath = "product_images" + File.separator + imageName;
+        log.info("GET /products/image/" + imagePath);
+
+        byte[] image = productService.getImage(imagePath);
+        HttpHeaders headers = new HttpHeaders();
+
+        Path path = null;
+       try {
+           path = Paths.get(imagePath);
+           headers.add("Content-Type", Files.probeContentType(path));
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+        return new ResponseEntity<>(image, headers, HttpStatus.OK);
     }
 
     @PatchMapping(value="/update")
-    public ResponseEntity<Product> updateProduct(@RequestParam("file") MultipartFile file, ProductUpdateReq productReq) throws Exception {
+    public ResponseEntity<ProductRes> updateProduct(@RequestParam("file") MultipartFile file, ProductUpdateReq productReq) throws Exception {
         log.info("Patch /products/update");
 
-        Product product = productService.updateProduct(file, productReq);
-        return ResponseEntity.status(200).body(product);
+        ProductRes productRes = productService.updateProduct(file, productReq);
+        return ResponseEntity.status(200).body(productRes);
     }
 
     @DeleteMapping(value="/delete/{productId}")
