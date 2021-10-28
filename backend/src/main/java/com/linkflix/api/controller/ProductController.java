@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.activation.MimetypesFileTypeMap;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -53,18 +54,9 @@ public class ProductController {
 
         byte[] image = productService.getImage(imagePath);
         HttpHeaders headers = new HttpHeaders();
+        String mimeType = productService.getMimeType(imagePath);
+        headers.add("Content-Type", mimeType);
 
-        Path path = null;
-       try {
-           log.info("****check1******");
-           path = Paths.get(imagePath);
-           log.info("****check2******");
-           headers.add("Content-Type", Files.probeContentType(path));
-           log.info("****check3******");
-           log.info(Files.probeContentType(path));
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
         return new ResponseEntity<>(image, headers, HttpStatus.OK);
     }
 

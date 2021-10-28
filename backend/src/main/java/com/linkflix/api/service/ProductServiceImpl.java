@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.activation.MimetypesFileTypeMap;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Optional;
@@ -89,6 +90,18 @@ public class ProductServiceImpl implements ProductService {
         }
 
         return fileArray;
+    }
+
+    @Override
+    public String getMimeType(String imagePath) {
+        MimetypesFileTypeMap mimeTypesMap = new MimetypesFileTypeMap();
+        File file = new File(imagePath);
+        String mimeType = mimeTypesMap.getContentType(file);
+        if(mimeType.contains("image")) {
+            return mimeType;
+        } else {
+            return null;
+        }
     }
 
     @Override

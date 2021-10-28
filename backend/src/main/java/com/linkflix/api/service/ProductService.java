@@ -11,6 +11,7 @@ public interface ProductService {
     ProductRes saveProduct(MultipartFile file, ProductReq productReq) throws Exception;
     ProductRes getProduct(Long productId);
     byte[] getImage(String imagePath);
+    String getMimeType(String imagePath);
     ProductRes updateProduct(MultipartFile file, ProductUpdateReq productReq) throws Exception;
     void deleteProduct(Long productId);
 
