@@ -1,19 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <div>A104 뷰3 + 타입스크립트 + vite를 이용하여 크롬익스텐션 만들기</div>
+  <div>
+    <GlobalStyleBase></GlobalStyleBase>
+    <ProductList></ProductList>
+  </div>
 </template>
 
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+
+import GlobalStyleBase from './components/GlobalStyleBase.vue';
+import ProductList from './components/ProductList/ProductList.vue';
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
