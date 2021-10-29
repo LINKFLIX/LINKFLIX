@@ -17,7 +17,7 @@
       :aria-controls="'collapseDetail' + product.id"
     >
       <div class="row g-0 w-100 h-100">
-        <div class="col-md-5 h-100">
+        <div class="col-5 h-100">
           <img
             :src="product.imagePath"
             :title="product.name"
@@ -27,7 +27,7 @@
             style="object-fit: cover"
           />
         </div>
-        <div class="col-md-7">
+        <div class="col-7">
           <div class="d-flex flex-column card-body p-2 h-100">
             <small class="d-block text-muted text-truncate">{{
               joinTimelines(product.timeline)
