@@ -13,4 +13,5 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # container가 구동되면 실행
-ENTRYPOINT ["python", "app.py"]
+# ENTRYPOINT ["python", "app.py"]
+RUN flask run
