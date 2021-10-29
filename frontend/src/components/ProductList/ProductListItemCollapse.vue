@@ -2,38 +2,48 @@
   <div>
     <div class="layered-image" :style="setBgProductImage()"></div>
     <div class="overlay-text bg-dark text-white">
-      <h5>{{ product.name }}</h5>
+      <div class="fs-xlarge m-2" style="margin-top: 0 !important">
+        {{ product.name }}
+      </div>
       <table
         class="
           table table-dark table-hover
           cursor-pointer
-          mt-3
+          mt-4
           table-layout-fixed
         "
       >
         <thead class="table-light">
           <tr>
-            <th scope="col" style="width: 60%">판매처</th>
-            <th scope="col" style="width: 40%">가격</th>
+            <th scope="col" style="width: 60%">
+              <span class="fs-medium">판매처</span>
+            </th>
+            <th scope="col" style="width: 40%">
+              <span class="fs-medium">가격</span>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr v-if="priceList.length == 0">
-            <td colspan="2" class="text-center">No Data</td>
+            <td colspan="2" class="text-center fs-medium">No Data</td>
           </tr>
           <tr v-for="price in priceList" @click="onClickRow(price.link)">
-            <td class="text-truncate" v-html="price.seller"></td>
-            <td>{{ price.price }}</td>
+            <td class="text-truncate fs-medium" v-html="price.seller"></td>
+            <td class="fs-medium">{{ price.price }}</td>
           </tr>
         </tbody>
       </table>
 
-      <div>
-        <h6>타임라인</h6>
-        <ul>
-          <div v-if="product.timeline.length == 0">No Data</div>
-          <li v-for="timeline in product.timeline">
-            <small>{{ timeline.startTime }} ~ {{ timeline.endTime }}</small>
+      <div class="mb-3">
+        <div class="fs-large m-2">타임라인</div>
+        <ul class="list-inline m-2">
+          <div v-if="product.timeline.length == 0" class="fs-medium">
+            No Data
+          </div>
+          <li v-for="timeline in product.timeline" class="list-inline-item">
+            <span class="fs-medium">
+              {{ timeline.startTime }}~{{ timeline.endTime }}
+            </span>
           </li>
         </ul>
       </div>
@@ -42,11 +52,10 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { PropType, defineProps, toRef } from 'vue';
 import { Product, Sale } from '../../types';
-import NotFoundImage from '../../assets/images/not-found.jpg';
 
-const { product, priceList } = defineProps({
+const props = defineProps({
   product: {
     type: Object as PropType<Product>,
     required: true,
@@ -57,11 +66,14 @@ const { product, priceList } = defineProps({
   },
 });
 
+const product = toRef(props, 'product');
+const priceList = toRef(props, 'priceList');
+
 const DARK_COLOR = '#212529';
 const setBgProductImage = () => {
   return {
     background: `linear-gradient(to bottom, transparent, 20%, ${DARK_COLOR}),
-      url('${product.imagePath}'), url(${NotFoundImage})`,
+      url('${product.value.imagePath}')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
@@ -94,13 +106,17 @@ const onClickRow = (link: string) => {
   top: 0;
   left: 0;
   z-index: 3;
-  padding: 0 0.5rem 0.5rem;
+  padding: 0 5px 5px;
 }
 .table > thead > tr > th {
-  font-size: 0.75rem;
-  padding: 0.5rem 1.25rem;
+  font-size: 8px;
+  padding: 10px 13px;
 }
 .table > tbody > tr > td {
-  padding: 0.5rem 1rem;
+  padding: 10px;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 12px;
 }
 </style>

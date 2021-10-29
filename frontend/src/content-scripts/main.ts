@@ -2,6 +2,7 @@ import { createApp, DefineComponent } from 'vue';
 import Popup from './Popup.vue';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../assets/css/base.css';
 
 const MOUNT_EL_ID = 'linkFlix';
 

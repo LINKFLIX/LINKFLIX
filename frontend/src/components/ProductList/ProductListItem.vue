@@ -17,34 +17,33 @@
       :aria-controls="'collapseDetail' + product.id"
     >
       <div class="row g-0 w-100 h-100">
-        <div class="col-md-5 h-100">
+        <div class="col-5 h-100">
           <img
             :src="product.imagePath"
             :title="product.name"
             :alt="product.name"
-            @error="setDefaultImage"
             class="w-100 h-100"
             style="object-fit: cover"
           />
         </div>
-        <div class="col-md-7">
+        <div class="col-7">
           <div class="d-flex flex-column card-body p-2 h-100">
-            <small class="d-block text-muted text-truncate">{{
-              joinTimelines(product.timeline)
-            }}</small>
-            <h6 class="text-truncate m-0">
+            <div class="text-muted text-truncate fs-small">
+              {{ joinTimelines(product.timeline) }}
+            </div>
+            <div class="text-truncate m-0 fs-large">
               {{ product.name }}
-            </h6>
+            </div>
             <div
               class="text-end d-flex flex-column justify-content-end"
               style="flex-grow: 1"
             >
               <div v-if="priceList.length == 0">No Data</div>
               <div v-else>
-                <small>최저가</small>
+                <div class="fs-small">최저가</div>
                 <div>
-                  <h5 class="d-inline-block m-0">{{ minPrice }}</h5>
-                  <small class="d-inline-block ms-1">원</small>
+                  <div class="d-inline-block m-0 fs-xlarge">{{ minPrice }}</div>
+                  <div class="d-inline-block ms-1 fs-small">원</div>
                 </div>
               </div>
             </div>
@@ -62,27 +61,27 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, onMounted, ref, computed } from 'vue';
+import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
 import { testPriceList } from '../../dump';
-import NotFoundImage from '../../assets/images/not-found.jpg';
 
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
-const { product } = defineProps({
+const props = defineProps({
   product: {
     type: Object as PropType<Product>,
     required: true,
   },
 });
 
+const product = toRef(props, 'product');
 const priceList = ref<Sale[]>([]);
 
 onMounted(() => {
   try {
     // TODO: call crawling and set state
     const result = testPriceList.find(
-      (item) => item.keyword === product.searchKeyword
+      (item) => item.keyword === product.value.searchKeyword
     );
     if (result) {
       result.priceList = result.priceList.sort(
@@ -119,10 +118,6 @@ const joinTimelines = (timeline: Timeline[]) => {
 
   return str;
 };
-
-const setDefaultImage = (event: Event) => {
-  (event.target as HTMLImageElement).src = NotFoundImage;
-};
 </script>
 
 <style scoped>
@@ -133,7 +128,7 @@ const setDefaultImage = (event: Event) => {
 }
 .hover-expand:hover {
   z-index: 10;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   transform: scale(1.05);
 }
 </style>
