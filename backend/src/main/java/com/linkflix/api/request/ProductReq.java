@@ -7,6 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 public class ProductReq {
 
-    private String name;
     private String searchKeyword;
+    private String name;
+
 }

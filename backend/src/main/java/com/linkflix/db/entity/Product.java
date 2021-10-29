@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Setter
 public class Product extends BaseEntity {
 
-    @Column(nullable = false)
+    @Column(unique = true)
     private String searchKeyword;
     private String name;
     private String imagePath;
