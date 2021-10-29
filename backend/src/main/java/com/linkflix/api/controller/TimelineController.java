@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Api(value = "타임라인(Timeline) API", tags = {"Timeline"})
@@ -42,6 +43,7 @@ public class TimelineController {
         for(Timeline timeline : timelines) {
             timelineRes.add(timelineService.selectTimeline(timeline.getId()));
         }
+        timelineRes = timelineService.sortTimeline(timelineRes);
     return ResponseEntity.status(200).body(timelineRes);
     }
 

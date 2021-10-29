@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +37,11 @@ public class TimelineServiceImpl implements TimelineService{
         timelineRes.setStartTime(timeline.get().getStartTime());
         timelineRes.setEndTime(timeline.get().getEndTime());
         return timelineRes;
+    }
+
+    @Override
+    public List<TimelineRes> sortTimeline(List<TimelineRes> timelineRes) {
+        return null;
     }
 
     @Override
