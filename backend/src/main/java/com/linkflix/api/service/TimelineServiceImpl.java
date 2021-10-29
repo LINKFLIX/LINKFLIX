@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,7 +42,14 @@ public class TimelineServiceImpl implements TimelineService{
 
     @Override
     public List<TimelineRes> sortTimeline(List<TimelineRes> timelineRes) {
-        return null;
+       Collections.sort(timelineRes, new Comparator<TimelineRes>() {
+           @Override
+           public int compare(TimelineRes o1, TimelineRes o2) {
+               return (o1.getStartTime().compareTo(o2.getStartTime()) != 0) ? o1.getStartTime().compareTo(o2.getStartTime()) : o1.getEndTime().compareTo(o2.getEndTime());
+           }
+       });
+
+        return timelineRes;
     }
 
     @Override
