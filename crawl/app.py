@@ -1,8 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
-from flask import Flask, render_template, request
+from flask import Flask, request
 
 app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return 'Hello, LINKFLIX! Please Use Get Method ^_^'
+
 
 @app.route('/')
 def crawl(name):
