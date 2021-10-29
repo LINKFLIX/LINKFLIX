@@ -1,11 +1,10 @@
 export interface Timeline {
-  netflixEpisodeId: string;
   startTime: string;
   endTime: string;
 }
 
 export interface Product {
-  id: string;
+  id: number;
   name: string;
   imagePath: string;
   searchKeyword: string;
@@ -20,4 +19,18 @@ export interface Sale {
 export interface ProductWithPriceList {
   product: Product;
   priceList: Sale[];
+}
+
+export interface TimelineDto {
+  endTime: string;
+  id: number;
+  product: {
+    createdAt: string;
+    id: number;
+    imagePath: string;
+    name: string;
+    searchKeyword: string;
+    updatedAt: string;
+  };
+  startTime: string;
 }
