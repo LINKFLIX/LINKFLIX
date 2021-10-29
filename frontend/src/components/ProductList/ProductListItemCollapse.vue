@@ -42,11 +42,10 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
+import { PropType, defineProps, toRef } from 'vue';
 import { Product, Sale } from '../../types';
-import NotFoundImage from '../../assets/images/not-found.jpg';
 
-const { product, priceList } = defineProps({
+const props = defineProps({
   product: {
     type: Object as PropType<Product>,
     required: true,
@@ -57,11 +56,14 @@ const { product, priceList } = defineProps({
   },
 });
 
+const product = toRef(props, 'product');
+const priceList = toRef(props, 'priceList');
+
 const DARK_COLOR = '#212529';
 const setBgProductImage = () => {
   return {
     background: `linear-gradient(to bottom, transparent, 20%, ${DARK_COLOR}),
-      url('${product.imagePath}'), url(${NotFoundImage})`,
+      url('${product.value.imagePath}')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };

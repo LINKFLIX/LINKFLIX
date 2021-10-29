@@ -62,27 +62,27 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, onMounted, ref, computed } from 'vue';
+import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
 import { testPriceList } from '../../dump';
-import NotFoundImage from '../../assets/images/not-found.jpg';
 
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
-const { product } = defineProps({
+const props = defineProps({
   product: {
     type: Object as PropType<Product>,
     required: true,
   },
 });
 
+const product = toRef(props, 'product');
 const priceList = ref<Sale[]>([]);
 
 onMounted(() => {
   try {
     // TODO: call crawling and set state
     const result = testPriceList.find(
-      (item) => item.keyword === product.searchKeyword
+      (item) => item.keyword === product.value.searchKeyword
     );
     if (result) {
       result.priceList = result.priceList.sort(
@@ -121,7 +121,8 @@ const joinTimelines = (timeline: Timeline[]) => {
 };
 
 const setDefaultImage = (event: Event) => {
-  (event.target as HTMLImageElement).src = NotFoundImage;
+  console.log('Not Found');
+  // (event.target as HTMLImageElement).src = 'assets/images/not-found.jpg';
 };
 </script>
 
