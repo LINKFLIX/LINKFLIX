@@ -10,6 +10,7 @@ import java.util.List;
 public interface TimelineService {
 
     TimelineRes selectTimeline(Long id);
+    List<TimelineRes> sortTimeline(List<TimelineRes> timelineRes);
     List<Timeline> getTimelineByNetflixEpisodeId(String netflixEpisodeId);
     Timeline saveTimeline(TimelineReq timelineReq);
     TimelineRes updateTimeline(TimelineUpdateReq timelineReq);
