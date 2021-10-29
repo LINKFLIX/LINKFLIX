@@ -1,7 +1,7 @@
 import { createApp, DefineComponent } from 'vue';
 import Popup from './Popup.vue';
 
-const MOUNT_EL_ID = 'attonex_clipper';
+const MOUNT_EL_ID = 'linkFlix';
 
 let mountEl = document.getElementById(MOUNT_EL_ID);
 if (mountEl) {
