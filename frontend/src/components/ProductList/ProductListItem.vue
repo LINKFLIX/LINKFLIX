@@ -29,22 +29,22 @@
         </div>
         <div class="col-7">
           <div class="d-flex flex-column card-body p-2 h-100">
-            <small class="d-block text-muted text-truncate">{{
-              joinTimelines(product.timeline)
-            }}</small>
-            <h6 class="text-truncate m-0">
+            <div class="text-muted text-truncate fs-small">
+              {{ joinTimelines(product.timeline) }}
+            </div>
+            <div class="text-truncate m-0 fs-large">
               {{ product.name }}
-            </h6>
+            </div>
             <div
               class="text-end d-flex flex-column justify-content-end"
               style="flex-grow: 1"
             >
               <div v-if="priceList.length == 0">No Data</div>
               <div v-else>
-                <small>최저가</small>
+                <div class="fs-small">최저가</div>
                 <div>
-                  <h5 class="d-inline-block m-0">{{ minPrice }}</h5>
-                  <small class="d-inline-block ms-1">원</small>
+                  <div class="d-inline-block m-0 fs-xlarge">{{ minPrice }}</div>
+                  <div class="d-inline-block ms-1 fs-small">원</div>
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ const setDefaultImage = (event: Event) => {
 }
 .hover-expand:hover {
   z-index: 10;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   transform: scale(1.05);
 }
 </style>

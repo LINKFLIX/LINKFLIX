@@ -1,0 +1,36 @@
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.table-layout-fixed {
+  table-layout: fixed !important;
+}
+
+.fs-small {
+  font-size: 10px !important;
+}
+.fs-medium {
+  font-size: 14px !important;
+}
+.fs-large {
+  font-size: 18px !important;
+}
+.fs-xlarge {
+  font-size: 24px !important;
+}
+.fs-xxlarge {
+  font-size: 32px !important;
+}
+
+.p-2 {
+  padding: 5px !important;
+}
+.m-2 {
+  margin: 5px !important;
+}
+.mt-4 {
+  margin: 15px 0 !important;
+}
+.mb-3 {
+  margin-bottom: 10px !important;
+}

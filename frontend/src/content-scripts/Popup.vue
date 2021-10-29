@@ -1,6 +1,5 @@
 <template>
   <div>
-    <GlobalStyleBase></GlobalStyleBase>
     <ProductList></ProductList>
   </div>
 </template>
@@ -9,7 +8,6 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 
-import GlobalStyleBase from '../components/GlobalStyleBase.vue';
 import ProductList from '../components/ProductList/ProductList.vue';
 </script>
 
