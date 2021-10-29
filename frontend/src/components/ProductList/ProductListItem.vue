@@ -22,7 +22,6 @@
             :src="product.imagePath"
             :title="product.name"
             :alt="product.name"
-            @error="setDefaultImage"
             class="w-100 h-100"
             style="object-fit: cover"
           />
@@ -118,11 +117,6 @@ const joinTimelines = (timeline: Timeline[]) => {
   }
 
   return str;
-};
-
-const setDefaultImage = (event: Event) => {
-  console.log('Not Found');
-  // (event.target as HTMLImageElement).src = 'assets/images/not-found.jpg';
 };
 </script>
 
