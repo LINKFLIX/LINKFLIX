@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\multicampus\OneDrive\Desktop\lectures\project\crawl"
+VIRTUAL_ENV="C:\Users\multicampus\OneDrive\Desktop\lectures\project\LINKFLIX\crawl"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
