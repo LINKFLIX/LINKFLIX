@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 360px">
+  <div>
     <div
       class="
         position-relative
@@ -9,8 +9,9 @@
         p-0
         hover-expand
         cursor-pointer
+        border-0
       "
-      style="width: 360px; height: 120px"
+      style="height: 120px"
       data-bs-toggle="collapse"
       :data-bs-target="'#collapseDetail' + product.id"
       aria-expanded="false"
@@ -24,11 +25,12 @@
             :alt="product.name"
             class="w-100 h-100"
             style="object-fit: cover"
+            @error="setDefaultImage"
           />
         </div>
         <div class="col-7">
           <div class="d-flex flex-column card-body p-2 h-100">
-            <div class="text-muted text-truncate fs-small">
+            <div class="text-muted text-truncate fs-small mb-2">
               {{ joinTimelines(product.timeline) }}
             </div>
             <div class="text-truncate m-0 fs-large">
@@ -64,6 +66,7 @@
 import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
 import { testPriceList } from '../../dump';
+import { NotFoundImageEncodedBase64 } from '../../assets/images';
 
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
@@ -118,16 +121,18 @@ const joinTimelines = (timeline: Timeline[]) => {
 
   return str;
 };
+
+const setDefaultImage = (event: Event) => {
+  (event.target as HTMLImageElement).src = NotFoundImageEncodedBase64;
+};
 </script>
 
 <style scoped>
 .hover-expand {
-  z-index: 0;
   border-radius: 0;
-  transition: transform ease 300ms, border-radius 300ms, z-index 300ms;
+  transition: transform ease 300ms, border-radius 300ms;
 }
 .hover-expand:hover {
-  z-index: 10;
   border-radius: 10px;
   transform: scale(1.05);
 }
