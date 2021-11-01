@@ -42,7 +42,7 @@
           </div>
           <li v-for="timeline in product.timeline" class="list-inline-item">
             <span class="fs-medium">
-              {{ timeline.startTime }}~{{ timeline.endTime }}
+              {{ timeline.startTime }}
             </span>
           </li>
         </ul>

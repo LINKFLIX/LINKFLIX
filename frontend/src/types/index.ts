@@ -1,7 +1,7 @@
 export interface Timeline {
   netflixEpisodeId: string;
   startTime: string;
-  endTime: string;
+  endTime?: string;
 }
 
 export interface Product {
