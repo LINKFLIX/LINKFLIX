@@ -25,6 +25,9 @@
 .p-2 {
   padding: 5px !important;
 }
+.p-3 {
+  padding: 10px !important;
+}
 .m-2 {
   margin: 5px !important;
 }
@@ -33,4 +36,7 @@
 }
 .mb-3 {
   margin-bottom: 10px !important;
+}
+.mb-2 {
+  margin-bottom: 5px !important;
 }

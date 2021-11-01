@@ -59,6 +59,27 @@ export const testProductList: Product[] = [
     imagePath: '',
     timeline: [],
   },
+  {
+    id: '5',
+    name: '[테스트] 데이터가 없는 아이템',
+    searchKeyword: 'No Data',
+    imagePath: '',
+    timeline: [],
+  },
+  {
+    id: '6',
+    name: '[테스트] 데이터가 없는 아이템',
+    searchKeyword: 'No Data',
+    imagePath: '',
+    timeline: [],
+  },
+  {
+    id: '7',
+    name: '[테스트] 데이터가 없는 아이템',
+    searchKeyword: 'No Data',
+    imagePath: '',
+    timeline: [],
+  },
 ];
 
 export const testPriceList: { keyword: string; priceList: Sale[] }[] = [
