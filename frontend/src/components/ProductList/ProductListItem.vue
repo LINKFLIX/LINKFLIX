@@ -24,6 +24,7 @@
             :alt="product.name"
             class="w-100 h-100"
             style="object-fit: cover"
+            @error="setDefaultImage"
           />
         </div>
         <div class="col-7">
@@ -64,6 +65,7 @@
 import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
 import { testPriceList } from '../../dump';
+import { NotFoundImageEncodedBase64 } from '../../assets/images';
 
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
@@ -117,6 +119,10 @@ const joinTimelines = (timeline: Timeline[]) => {
   }
 
   return str;
+};
+
+const setDefaultImage = (event: Event) => {
+  (event.target as HTMLImageElement).src = NotFoundImageEncodedBase64;
 };
 </script>
 

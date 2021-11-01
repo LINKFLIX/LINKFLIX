@@ -54,6 +54,7 @@
 <script setup lang="ts">
 import { PropType, defineProps, toRef } from 'vue';
 import { Product, Sale } from '../../types';
+import { NotFoundImageEncodedBase64 } from '../../assets/images';
 
 const props = defineProps({
   product: {
@@ -73,7 +74,7 @@ const DARK_COLOR = '#212529';
 const setBgProductImage = () => {
   return {
     background: `linear-gradient(to bottom, transparent, 20%, ${DARK_COLOR}),
-      url('${product.value.imagePath}')`,
+      url('${product.value.imagePath}'), url('${NotFoundImageEncodedBase64}')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
