@@ -4,7 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/base.css';
 
-const MOUNT_EL_ID = 'linkFlix';
+const MOUNT_EL_ID = 'linkflix';
 
 let mountEl = document.getElementById(MOUNT_EL_ID);
 if (mountEl) {
