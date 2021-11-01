@@ -12,6 +12,5 @@ public class TimelineReq {
     private Long productId;
     private String netflixEpisodeId;
     private String startTime;
-    private String endTime;
 
 }
