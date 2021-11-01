@@ -13,6 +13,5 @@ public class TimelineRes {
     Long id;
     Product product;
     String startTime;
-    String endTime;
 
 }

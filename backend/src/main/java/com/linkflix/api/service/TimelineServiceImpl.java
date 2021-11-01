@@ -36,7 +36,6 @@ public class TimelineServiceImpl implements TimelineService{
         timelineRes.setId(id);
         timelineRes.setProduct(timeline.get().getProduct());
         timelineRes.setStartTime(timeline.get().getStartTime());
-        timelineRes.setEndTime(timeline.get().getEndTime());
         return timelineRes;
     }
 
@@ -45,7 +44,7 @@ public class TimelineServiceImpl implements TimelineService{
        Collections.sort(timelineRes, new Comparator<TimelineRes>() {
            @Override
            public int compare(TimelineRes o1, TimelineRes o2) {
-               return (o1.getStartTime().compareTo(o2.getStartTime()) != 0) ? o1.getStartTime().compareTo(o2.getStartTime()) : o1.getEndTime().compareTo(o2.getEndTime());
+               return o1.getStartTime().compareTo(o2.getStartTime());
            }
        });
 
@@ -62,7 +61,7 @@ public class TimelineServiceImpl implements TimelineService{
     public Timeline saveTimeline(TimelineReq timelineReq) {
        Product product = new Product();
        product.setId(timelineReq.getProductId());
-       return timelineRepository.save(new Timeline(product, timelineReq.getNetflixEpisodeId(), timelineReq.getStartTime(), timelineReq.getEndTime()));
+       return timelineRepository.save(new Timeline(product, timelineReq.getNetflixEpisodeId(), timelineReq.getStartTime()));
     }
 
     @Override
@@ -71,7 +70,6 @@ public class TimelineServiceImpl implements TimelineService{
         Timeline timeline = timelineRepository.findById(timelineReq.getTimelineId()).get();
         timeline.setNetflixEpisodeId(timelineReq.getNetflixEpisodeId());
         timeline.setStartTime(timelineReq.getStartTime());
-        timeline.setEndTime(timelineReq.getEndTime());
 
        TimelineRes timelineRes = selectTimeline(timelineReq.getTimelineId());
        return timelineRes;
