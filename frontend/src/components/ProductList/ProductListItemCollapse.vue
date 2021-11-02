@@ -54,7 +54,7 @@
 <script setup lang="ts">
 import { PropType, defineProps, toRef } from 'vue';
 import { Product, Sale } from '../../types';
-import { NotFoundImageEncodedBase64 } from '../../assets/images';
+import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
 
 const props = defineProps({
   product: {
