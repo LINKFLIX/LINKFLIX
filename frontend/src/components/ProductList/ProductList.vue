@@ -28,6 +28,10 @@ onMounted(() => {
         if (p) {
           p.timeline.push({ startTime: item.startTime });
         } else {
+          item.product.imagePath =
+            'https://k5a104.p.ssafy.io:8081/products/image/' +
+            item.product.imagePath.split('/')[2];
+
           result.push({
             ...item.product,
             timeline: [{ startTime: item.startTime }],
