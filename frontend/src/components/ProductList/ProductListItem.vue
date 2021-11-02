@@ -68,9 +68,8 @@
 <script setup lang="ts">
 import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
-import { testPriceList } from '../../dump';
 import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
-
+import { ProductSaleApi } from '../../api/crawlingApi';
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
 const props = defineProps({
@@ -85,18 +84,21 @@ const priceList = ref<Sale[]>([]);
 
 onMounted(() => {
   try {
-    // TODO: call crawling and set state
-    const result = testPriceList.find(
-      (item) => item.keyword === product.value.searchKeyword
-    );
-    if (result) {
-      result.priceList = result.priceList.sort(
-        (a, b) =>
-          removeCommaAndConvertToNumber(a.price) -
-          removeCommaAndConvertToNumber(b.price)
-      );
-      priceList.value = result.priceList;
-    }
+    ProductSaleApi.getProductSales(product.value.searchKeyword)
+      .then((data) => {
+        console.log(data);
+        if (data && data.length > 0) {
+          data = data.sort(
+            (a, b) =>
+              removeCommaAndConvertToNumber(a.price) -
+              removeCommaAndConvertToNumber(b.price)
+          );
+          priceList.value = data;
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   } catch (error) {
     console.error(error);
   }
