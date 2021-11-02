@@ -69,7 +69,7 @@
 import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
 import { testPriceList } from '../../dump';
-import { NotFoundImageEncodedBase64 } from '../../assets/images';
+import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
 
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
