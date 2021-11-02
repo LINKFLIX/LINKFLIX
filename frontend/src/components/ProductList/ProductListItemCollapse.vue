@@ -42,7 +42,7 @@
           </div>
           <li v-for="timeline in product.timeline" class="list-inline-item">
             <span class="fs-medium">
-              {{ timeline.startTime }}~{{ timeline.endTime }}
+              {{ timeline.startTime }}
             </span>
           </li>
         </ul>
@@ -54,7 +54,7 @@
 <script setup lang="ts">
 import { PropType, defineProps, toRef } from 'vue';
 import { Product, Sale } from '../../types';
-import { NotFoundImageEncodedBase64 } from '../../assets/images';
+import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
 
 const props = defineProps({
   product: {

@@ -4,7 +4,6 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/base.css';
 
-// document.body.appendChild(mountEl);
 
 // var config = {
 //   attributes: true,

@@ -2,85 +2,73 @@ import { Product, Sale } from '../types';
 
 export const testProductList: Product[] = [
   {
-    id: '1',
+    id: 1,
     name: '[엘무드] 오디너리 크롭 가디건 네이비',
     searchKeyword: '엘무드 오디너리 크롭 가디건 네이비',
     imagePath:
       'https://image.musinsa.com/images/goods_img/20200827/1567182/1567182_4_320.jpg',
     timeline: [
       {
-        netflixEpisodeId: '3612481234',
         startTime: '20:12',
-        endTime: '23:01',
       },
     ],
   },
   {
-    id: '2',
+    id: 2,
     name: '에이스침대 BMA 1139-E 침대 D (CA)',
     searchKeyword: '에이스침대 BMA 1139-E 침대',
     imagePath:
       'http://img.danawa.com/prod_img/500000/419/105/img/5105419_1.jpg',
     timeline: [
       {
-        netflixEpisodeId: '3612481234',
         startTime: '19:52',
-        endTime: '20:00',
       },
       {
-        netflixEpisodeId: '3612481234',
         startTime: '1:46:13',
-        endTime: '1:50:09',
       },
       {
-        netflixEpisodeId: '3612481234',
         startTime: '2:01:57',
-        endTime: '2:02:01',
       },
     ],
   },
   {
-    id: '3',
+    id: 3,
     name: '[노메뉴얼] PPS HAIRY CARDIGAN - BLACK',
     searchKeyword: '노메뉴얼 가디건 블랙',
     imagePath:
       'https://image.musinsa.com/images/goods_img/20210808/2052492/2052492_1_320.jpg',
     timeline: [
       {
-        netflixEpisodeId: '3612481234',
         startTime: '43:02',
-        endTime: '44:10',
       },
       {
-        netflixEpisodeId: '3612481234',
         startTime: '1:01:52',
-        endTime: '1:07:33',
       },
     ],
   },
   {
-    id: '4',
+    id: 4,
     name: '[테스트] 데이터가 없는 아이템',
     searchKeyword: 'No Data',
     imagePath: '',
     timeline: [],
   },
   {
-    id: '5',
+    id: 5,
     name: '[테스트] 데이터가 없는 아이템',
     searchKeyword: 'No Data',
     imagePath: '',
     timeline: [],
   },
   {
-    id: '6',
+    id: 6,
     name: '[테스트] 데이터가 없는 아이템',
     searchKeyword: 'No Data',
     imagePath: '',
     timeline: [],
   },
   {
-    id: '7',
+    id: 7,
     name: '[테스트] 데이터가 없는 아이템',
     searchKeyword: 'No Data',
     imagePath: '',
@@ -147,7 +135,44 @@ export const testPriceList: { keyword: string; priceList: Sale[] }[] = [
   },
 ];
 
-/*
-
-
-*/
+export const testTimelineResponse = [
+  {
+    endTime: 'string',
+    id: 0,
+    product: {
+      createdAt: '2021-10-29T05:57:30.360Z',
+      id: 0,
+      imagePath: 'string',
+      name: 'string',
+      searchKeyword: 'string',
+      updatedAt: '2021-10-29T05:57:30.360Z',
+    },
+    startTime: 'string',
+  },
+  {
+    endTime: 'string',
+    id: 1,
+    product: {
+      createdAt: '2021-10-29T05:57:30.360Z',
+      id: 1,
+      imagePath: 'string',
+      name: 'string',
+      searchKeyword: 'string',
+      updatedAt: '2021-10-29T05:57:30.360Z',
+    },
+    startTime: 'string',
+  },
+  {
+    endTime: 'string',
+    id: 2,
+    product: {
+      createdAt: '2021-10-29T05:57:30.360Z',
+      id: 0,
+      imagePath: 'string',
+      name: 'string',
+      searchKeyword: 'string',
+      updatedAt: '2021-10-29T05:57:30.360Z',
+    },
+    startTime: 'string',
+  },
+];

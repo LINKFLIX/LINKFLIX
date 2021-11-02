@@ -30,7 +30,10 @@
         </div>
         <div class="col-7">
           <div class="d-flex flex-column card-body p-2 h-100">
-            <div class="text-muted text-truncate fs-small mb-2">
+            <div
+              class="text-muted text-truncate fs-small"
+              style="margin-bottom: 3px"
+            >
               {{ joinTimelines(product.timeline) }}
             </div>
             <div class="text-truncate m-0 fs-large">
@@ -65,9 +68,8 @@
 <script setup lang="ts">
 import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
 import { Product, Sale, Timeline } from '../../types';
-import { testPriceList } from '../../dump';
-import { NotFoundImageEncodedBase64 } from '../../assets/images';
-
+import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
+import { ProductSaleApi } from '../../api/crawlingApi';
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
 
 const props = defineProps({
@@ -81,22 +83,20 @@ const product = toRef(props, 'product');
 const priceList = ref<Sale[]>([]);
 
 onMounted(() => {
-  try {
-    // TODO: call crawling and set state
-    const result = testPriceList.find(
-      (item) => item.keyword === product.value.searchKeyword
-    );
-    if (result) {
-      result.priceList = result.priceList.sort(
-        (a, b) =>
-          removeCommaAndConvertToNumber(a.price) -
-          removeCommaAndConvertToNumber(b.price)
-      );
-      priceList.value = result.priceList;
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  ProductSaleApi.getProductSales(product.value.searchKeyword)
+    .then((data) => {
+      if (data && data.length > 0) {
+        data = data.sort(
+          (a, b) =>
+            removeCommaAndConvertToNumber(a.price) -
+            removeCommaAndConvertToNumber(b.price)
+        );
+        priceList.value = data;
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 });
 
 const minPrice = computed(() => {
@@ -113,10 +113,10 @@ const removeCommaAndConvertToNumber = (price: string) => {
 const joinTimelines = (timeline: Timeline[]) => {
   if (!timeline || timeline.length == 0) return '타임라인 없음';
 
-  let str = timeline[0].startTime + '~' + timeline[0].endTime;
+  let str = timeline[0].startTime;
   for (let i = 1; i < timeline.length; i++) {
     str += `, `;
-    str += timeline[i].startTime + '~' + timeline[i].endTime;
+    str += timeline[i].startTime;
   }
 
   return str;
