@@ -26,7 +26,7 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="offcanvas-body p-0">
+      <div class="offcanvas-body p-0" style="overflow-x: hidden">
         <ProductList></ProductList>
       </div>
     </div>

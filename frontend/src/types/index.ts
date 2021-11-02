@@ -1,6 +1,6 @@
 export interface Timeline {
   startTime: string;
-  endTime: string;
+  endTime?: string;
 }
 
 export interface Product {
