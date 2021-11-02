@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { TimelineDto } from '../types';
 
 const instance = axios.create({
-  baseURL: 'http://k5a104.p.ssafy.io:8080/',
+  baseURL: 'https://k5a104.p.ssafy.io:8081/',
   timeout: 15000,
 });
 
@@ -17,5 +17,5 @@ const requests = {
 
 export const TimelineApi = {
   getTimelines: (episodeId: string): Promise<TimelineDto[]> =>
-    requests.get(`timeline/${episodeId}`),
+    requests.get(`timelines/${episodeId}`),
 };

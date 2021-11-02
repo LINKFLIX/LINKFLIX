@@ -10,34 +10,32 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import ProductListItem from './ProductListItem.vue';
-import { testProductList, testTimelineResponse } from '../../dump';
 import { Product, TimelineDto } from '../../types';
-import { TimelineApi } from '../../api/api';
+import { TimelineApi } from '../../api/restApi';
 
 const productList = ref<Product[]>([]);
 
 onMounted(() => {
-  const TEST_NETFLIX_EPISODE_ID = '81282956';
+  const netflixEpisodeId = window.location.pathname.split('/')[2];
 
-  TimelineApi.getTimelines(TEST_NETFLIX_EPISODE_ID)
+  TimelineApi.getTimelines(netflixEpisodeId)
     .then((data) => {
-      console.log(data);
       const responseData = data;
       const result: Product[] = [];
 
       responseData.forEach((item: TimelineDto) => {
         const p = result.find((p) => p.id == item.product.id);
         if (p) {
-          p.timeline.push({ startTime: item.startTime, endTime: item.endTime });
+          p.timeline.push({ startTime: item.startTime });
         } else {
           result.push({
             ...item.product,
-            timeline: [{ startTime: item.startTime, endTime: item.endTime }],
+            timeline: [{ startTime: item.startTime }],
           });
         }
       });
 
-      productList.value = testProductList;
+      productList.value = result;
     })
     .catch((err) => {
       console.error(err);

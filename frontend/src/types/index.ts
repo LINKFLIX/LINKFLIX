@@ -1,6 +1,5 @@
 export interface Timeline {
   startTime: string;
-  endTime?: string;
 }
 
 export interface Product {
@@ -22,7 +21,6 @@ export interface ProductWithPriceList {
 }
 
 export interface TimelineDto {
-  endTime: string;
   id: number;
   product: {
     createdAt: string;

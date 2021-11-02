@@ -10,7 +10,6 @@ export const testProductList: Product[] = [
     timeline: [
       {
         startTime: '20:12',
-        endTime: '23:01',
       },
     ],
   },
@@ -23,15 +22,12 @@ export const testProductList: Product[] = [
     timeline: [
       {
         startTime: '19:52',
-        endTime: '20:00',
       },
       {
         startTime: '1:46:13',
-        endTime: '1:50:09',
       },
       {
         startTime: '2:01:57',
-        endTime: '2:02:01',
       },
     ],
   },
@@ -44,11 +40,9 @@ export const testProductList: Product[] = [
     timeline: [
       {
         startTime: '43:02',
-        endTime: '44:10',
       },
       {
         startTime: '1:01:52',
-        endTime: '1:07:33',
       },
     ],
   },
@@ -140,23 +134,6 @@ export const testPriceList: { keyword: string; priceList: Sale[] }[] = [
     ],
   },
 ];
-/*
-[
-  {
-    "endTime": "string",
-    "id": 0,
-    "product": {
-      "createdAt": "2021-10-29T05:57:30.360Z",
-      "id": 0,
-      "imagePath": "string",
-      "name": "string",
-      "searchKeyword": "string",
-      "updatedAt": "2021-10-29T05:57:30.360Z"
-    },
-    "startTime": "string"
-  }
-]
-*/
 
 export const testTimelineResponse = [
   {
