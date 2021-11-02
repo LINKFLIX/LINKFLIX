@@ -83,25 +83,20 @@ const product = toRef(props, 'product');
 const priceList = ref<Sale[]>([]);
 
 onMounted(() => {
-  try {
-    ProductSaleApi.getProductSales(product.value.searchKeyword)
-      .then((data) => {
-        console.log(data);
-        if (data && data.length > 0) {
-          data = data.sort(
-            (a, b) =>
-              removeCommaAndConvertToNumber(a.price) -
-              removeCommaAndConvertToNumber(b.price)
-          );
-          priceList.value = data;
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  } catch (error) {
-    console.error(error);
-  }
+  ProductSaleApi.getProductSales(product.value.searchKeyword)
+    .then((data) => {
+      if (data && data.length > 0) {
+        data = data.sort(
+          (a, b) =>
+            removeCommaAndConvertToNumber(a.price) -
+            removeCommaAndConvertToNumber(b.price)
+        );
+        priceList.value = data;
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 });
 
 const minPrice = computed(() => {
