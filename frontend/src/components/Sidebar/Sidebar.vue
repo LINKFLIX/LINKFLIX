@@ -1,13 +1,13 @@
 <template>
   <div>
     <button
-      class="btn"
+      class="btn-logo"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight"
     >
-      LINKFLIX
+      LinkFlix
     </button>
 
     <div
@@ -40,4 +40,12 @@ import ProductList from '../ProductList/ProductList.vue';
 import { logoEncodedBase64 } from '../../assets/images/logo';
 </script>
 
-<style></style>
+<style>
+.btn-logo {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 3em;
+}
+</style>
