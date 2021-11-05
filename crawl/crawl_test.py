@@ -14,12 +14,11 @@ def crawl_test(name):
     seller = goods_soup.findAll('a', "productByMall_mall__1ITj0")
     seller_list = []
     for s in seller:
-        print(s.find('img'))
         # 이미지 없는 판매처
         if s.find('img') == None:
             seller_list.append(s.text)
         else:
-            seller_list.append(s.find('img')['src'])
+            seller_list.append(s.find('img'))
     # 가격
     price_list = []    
     price = goods_soup.find_all('td', 'productByMall_price__3F_YF')
@@ -37,6 +36,7 @@ def crawl_test(name):
         link_list.append(l['href'])
     
     data = {'seller': seller_list, 'price': price_list, 'link': link_list}
+    print(seller_list)
     return data
 
 crawl_test('이에르로르 에리떼')
