@@ -28,7 +28,9 @@
             <td colspan="2" class="text-center fs-medium">No Data</td>
           </tr>
           <tr v-for="price in priceList" @click="onClickRow(price.link)">
-            <td class="text-truncate fs-medium" v-html="price.seller"></td>
+            <td class="text-truncate fs-medium">
+              <span class="bg-white text-dark" v-html="price.seller"></span>
+            </td>
             <td class="fs-medium">{{ price.price }}</td>
           </tr>
         </tbody>

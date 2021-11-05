@@ -1,5 +1,6 @@
-import { createApp, DefineComponent } from 'vue';
+import { createApp } from 'vue';
 import Popup from './Popup.vue';
+
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/base.css';

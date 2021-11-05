@@ -85,14 +85,27 @@ const priceList = ref<Sale[]>([]);
 onMounted(() => {
   ProductSaleApi.getProductSales(product.value.searchKeyword)
     .then((data) => {
-      if (data && data.length > 0) {
-        data = data.sort(
+      // 응답 전처리
+      let result: Sale[] = [];
+      if (data && data.link && data.link.length > 0) {
+        const size = data.link.length;
+        for (let i = 0; i < size; i++) {
+          result.push({
+            link: data.link[i],
+            price: data.price[i],
+            seller: data.seller[i],
+          });
+        }
+
+        // 가격순 정렬
+        result = result.sort(
           (a, b) =>
             removeCommaAndConvertToNumber(a.price) -
             removeCommaAndConvertToNumber(b.price)
         );
-        priceList.value = data;
       }
+
+      priceList.value = result;
     })
     .catch((err) => {
       console.error(err);

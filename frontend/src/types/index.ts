@@ -15,6 +15,13 @@ export interface Sale {
   price: string;
   link: string;
 }
+
+export interface SaleDto {
+  seller: string[];
+  price: string[];
+  link: string[];
+}
+
 export interface ProductWithPriceList {
   product: Product;
   priceList: Sale[];

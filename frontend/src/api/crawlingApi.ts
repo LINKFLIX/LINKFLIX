@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { Sale } from '../types';
+import { SaleDto } from '../types';
 
 const instance = axios.create({
   baseURL: 'https://k5a104.p.ssafy.io:5001/',
@@ -16,6 +16,6 @@ const requests = {
 };
 
 export const ProductSaleApi = {
-  getProductSales: (keyword: string): Promise<Sale[]> =>
+  getProductSales: (keyword: string): Promise<SaleDto> =>
     requests.get(`get?name=${keyword}`),
 };
