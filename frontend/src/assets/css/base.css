@@ -43,3 +43,15 @@
 .mb-2 {
   margin-bottom: 5px !important;
 }
+
+/* 
+  netflix 내 .progress와 부트스트랩 5의 .progress가 겹쳐
+  쓸데없이 적용되는 css를 unset한다.
+*/
+.progress {
+  height: unset;
+  font-size: unset;
+  background-color: unset;
+  overflow: unset;
+  border-radius: unset;
+}
