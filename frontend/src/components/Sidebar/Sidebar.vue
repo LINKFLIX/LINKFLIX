@@ -7,7 +7,7 @@
       data-bs-target="#offcanvasRight"
       aria-controls="offcanvasRight"
     >
-      LinkFlix
+      LINKFLIX
     </button>
 
     <div
