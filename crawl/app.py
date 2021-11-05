@@ -29,7 +29,7 @@ def crawl(name):
         if s.find('img') == None:
             seller_list.append(s.text)
         else:
-            seller_list.append(s.find('img')['src'])
+            seller_list.append(s.find('img'))
     # 가격
     price_list = []    
     price = goods_soup.find_all('td', 'productByMall_price__3F_YF')
