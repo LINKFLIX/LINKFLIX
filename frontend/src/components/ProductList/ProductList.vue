@@ -8,17 +8,35 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref, toRef, defineProps, watch } from 'vue';
 import ProductListItem from './ProductListItem.vue';
 import { Product, TimelineDto } from '../../types';
 import { TimelineApi } from '../../api/restApi';
 
+const props = defineProps({
+  isShow: {
+    type: Boolean,
+    required: true,
+  },
+});
+
+const currentEpisodeId = ref('');
+const isShow = toRef(props, 'isShow');
 const productList = ref<Product[]>([]);
 
-onMounted(() => {
-  const netflixEpisodeId = window.location.pathname.split('/')[2];
+watch(isShow, () => {
+  if (isShow.value) {
+    const netflixEpisodeId = window.location.pathname.split('/')[2];
 
-  TimelineApi.getTimelines(netflixEpisodeId)
+    if (currentEpisodeId.value !== netflixEpisodeId) {
+      currentEpisodeId.value = netflixEpisodeId;
+      callGetTimelines();
+    }
+  }
+});
+
+const callGetTimelines = () => {
+  TimelineApi.getTimelines(currentEpisodeId.value)
     .then((data) => {
       const responseData = data;
       const result: Product[] = [];
@@ -44,7 +62,7 @@ onMounted(() => {
     .catch((err) => {
       console.error(err);
     });
-});
+};
 </script>
 
 <style></style>
