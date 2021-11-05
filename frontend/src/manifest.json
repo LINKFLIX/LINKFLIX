@@ -15,9 +15,6 @@
     "48": "assets/linkflix-icon-48.png",
     "128": "assets/linkflix-icon-128.png"
   },
-  "background": {
-    "service_worker": "background.ts"
-  },
   "content_scripts": [
     {
       "matches": ["*://*.netflix.com/*"],
