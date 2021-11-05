@@ -22,6 +22,9 @@
   font-size: 32px !important;
 }
 
+.p-1 {
+  padding: 2px !important;
+}
 .p-2 {
   padding: 5px !important;
 }

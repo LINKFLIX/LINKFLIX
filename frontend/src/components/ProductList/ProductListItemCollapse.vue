@@ -29,7 +29,7 @@
           </tr>
           <tr v-for="price in priceList" @click="onClickRow(price.link)">
             <td class="text-truncate fs-medium">
-              <span class="bg-white text-dark" v-html="price.seller"></span>
+              <span class="bg-white text-dark p-1" v-html="price.seller"></span>
             </td>
             <td class="fs-medium">{{ price.price }}</td>
           </tr>
