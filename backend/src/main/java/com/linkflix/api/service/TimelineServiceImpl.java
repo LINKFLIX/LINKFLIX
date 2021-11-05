@@ -44,7 +44,8 @@ public class TimelineServiceImpl implements TimelineService{
        Collections.sort(timelineRes, new Comparator<TimelineRes>() {
            @Override
            public int compare(TimelineRes o1, TimelineRes o2) {
-               return o1.getStartTime().compareTo(o2.getStartTime());
+               int num = o1.getStartTime().length() - o2.getStartTime().length();
+               return num == 0 ? o1.getStartTime().compareTo(o2.getStartTime()) : o1.getStartTime().length() - o2.getStartTime().length();
            }
        });
 
