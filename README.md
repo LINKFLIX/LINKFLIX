@@ -1,6 +1,6 @@
 # 🎁 LINKFLIX  
 
-!(md-images/linkflix-logo.png)  
+![logo](md-images/linkflix-logo.png)  
 
 ## 🔅 Introduction  
 - 넷플릭스에서 현재 시청 중인 영상의 PPL 제품을 바로 확인할 수 있는 **크롬 확장 프로그램**  
@@ -10,7 +10,7 @@
 
 
 ## 🖥 Architecture  
-!(md-images/architecture.JPG)
+![architecture](md-images/architecture.JPG)
 
 - **Front-End**  
   - Language  
