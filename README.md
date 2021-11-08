@@ -24,7 +24,7 @@
   - Language  
     - <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=black"> <img src="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white">  
   - Framework / Library  
-    - <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=green"> <img src="https://img.shields.io/badge/JPA-black?style=for-the-badge&logo=JPA&logoColor=white"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=black">  
+    - <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=Spring Boot&logoColor=green"> <img src="https://img.shields.io/badge/JPA-black?style=for-the-badge&logo=JPA&logoColor=white"> <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=black">  
     - <img src="https://img.shields.io/badge/flask-0C0C0C.svg?&style=for-the-badge&logo=flask&logoColor=white">
 
 - **Deployment**  
@@ -40,7 +40,7 @@
 
 ## 👨‍👩‍👦‍👦 Team  
 - 이채하 : Leader, BE  
-- 김주형 : Crawling  
+- 김주형 : BE(Crawling)  
 - 신주환 : FE  
 - 장민호 : FE, BE  
 - 정원이 : FE  
