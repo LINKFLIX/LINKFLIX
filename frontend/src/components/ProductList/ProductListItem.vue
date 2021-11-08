@@ -43,7 +43,10 @@
               class="text-end d-flex flex-column justify-content-end"
               style="flex-grow: 1"
             >
-              <div v-if="priceList.length == 0">No Data</div>
+              <div v-if="isLoading" class="m-2">
+                <Spinner></Spinner>
+              </div>
+              <div v-else-if="priceList.length == 0">No Data</div>
               <div v-else>
                 <div class="fs-small">최저가</div>
                 <div>
@@ -79,6 +82,7 @@ import { Product, Sale, Timeline } from '../../types';
 import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
 import { ProductSaleApi } from '../../api/crawlingApi';
 import ProductListItemCollapse from './ProductListItemCollapse.vue';
+import Spinner from '../Spinner.vue';
 
 const props = defineProps({
   product: {
@@ -89,6 +93,7 @@ const props = defineProps({
 
 const product = toRef(props, 'product');
 const priceList = ref<Sale[]>([]);
+const isLoading = ref(false);
 
 onMounted(() => {
   callGetPriceList();
@@ -100,6 +105,8 @@ watch(product, () => {
 });
 
 const callGetPriceList = () => {
+  isLoading.value = true;
+
   ProductSaleApi.getProductSales(product.value.searchKeyword)
     .then((data) => {
       // 응답 전처리
@@ -126,8 +133,10 @@ const callGetPriceList = () => {
     })
     .catch((err) => {
       console.error(err);
+    })
+    .finally(() => {
+      isLoading.value = false;
     });
-});
 };
 
 const minPrice = computed(() => {
