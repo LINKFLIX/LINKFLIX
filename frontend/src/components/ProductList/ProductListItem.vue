@@ -66,7 +66,15 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, defineProps, onMounted, toRef, ref, computed } from 'vue';
+import {
+  PropType,
+  defineProps,
+  onMounted,
+  toRef,
+  ref,
+  computed,
+  watch,
+} from 'vue';
 import { Product, Sale, Timeline } from '../../types';
 import { NotFoundImageEncodedBase64 } from '../../assets/images/notFoundImage';
 import { ProductSaleApi } from '../../api/crawlingApi';
@@ -83,6 +91,15 @@ const product = toRef(props, 'product');
 const priceList = ref<Sale[]>([]);
 
 onMounted(() => {
+  callGetPriceList();
+});
+
+watch(product, () => {
+  priceList.value = [];
+  callGetPriceList();
+});
+
+const callGetPriceList = () => {
   ProductSaleApi.getProductSales(product.value.searchKeyword)
     .then((data) => {
       // 응답 전처리
@@ -111,6 +128,7 @@ onMounted(() => {
       console.error(err);
     });
 });
+};
 
 const minPrice = computed(() => {
   if (priceList.value && priceList.value.length > 0) {
