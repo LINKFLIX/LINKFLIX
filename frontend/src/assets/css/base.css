@@ -1,0 +1,71 @@
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.table-layout-fixed {
+  table-layout: fixed !important;
+}
+
+.fs-small {
+  font-size: 10px !important;
+}
+.fs-medium {
+  font-size: 14px !important;
+}
+.fs-large {
+  font-size: 18px !important;
+}
+.fs-xlarge {
+  font-size: 24px !important;
+}
+.fs-xxlarge {
+  font-size: 32px !important;
+}
+
+.p-1 {
+  padding: 2px !important;
+}
+.p-2 {
+  padding: 5px !important;
+}
+.p-3 {
+  padding: 10px !important;
+}
+.m-2 {
+  margin: 5px !important;
+}
+.m-4 {
+  margin: 15px !important;
+}
+.mt-4 {
+  margin: 15px 0 !important;
+}
+.mb-3 {
+  margin-bottom: 10px !important;
+}
+.mb-2 {
+  margin-bottom: 5px !important;
+}
+
+/* 
+  netflix 내 .progress와 부트스트랩 5의 .progress가 겹쳐
+  쓸데없이 적용되는 css를 unset한다.
+*/
+.progress {
+  height: unset;
+  font-size: unset;
+  background-color: unset;
+  overflow: unset;
+  border-radius: unset;
+}
+h4 {
+  font-size: unset;
+  margin-top: unset;
+  margin-bottom: unset;
+  line-height: unset;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}

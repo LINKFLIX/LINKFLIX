@@ -1,0 +1,24 @@
+{
+  "name": "LINKFLIX",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": {
+      "16": "assets/linkflix-icon-16.png",
+      "48": "assets/linkflix-icon-48.png",
+      "128": "assets/linkflix-icon-128.png"
+    },
+    "default_title": "LINKFLIX"
+  },
+  "icons": {
+    "16": "assets/linkflix-icon-16.png",
+    "48": "assets/linkflix-icon-48.png",
+    "128": "assets/linkflix-icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.netflix.com/*"],
+      "js": ["content-scripts/main.ts"]
+    }
+  ]
+}
