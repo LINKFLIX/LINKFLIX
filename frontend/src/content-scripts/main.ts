@@ -41,6 +41,11 @@ const renderToggleBtnIfNodeAvailable = () => {
 
     const toggleBtnEl = document.createElement('div');
     toggleBtnEl.innerHTML = TOGGLE_BTN_EL.trim();
+    toggleBtnEl.onclick = function() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      }
+    };
     target.prepend(toggleBtnEl);
   }
 
