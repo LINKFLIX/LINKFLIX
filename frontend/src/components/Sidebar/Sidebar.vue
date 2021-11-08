@@ -18,7 +18,10 @@
         aria-label="Close"
       ></button>
     </div>
-    <div class="offcanvas-body p-0" style="overflow-x: hidden">
+    <div
+      class="offcanvas-body p-0 scroll-display-none"
+      style="overflow-x: hidden;"
+    >
       <ProductList :isShow="isShow"></ProductList>
     </div>
   </div>
@@ -54,5 +57,12 @@ onMounted(() => {
 }
 .linkflix-toggle-btn:hover {
   transform: scale(1.3);
+}
+.scroll-display-none::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
+}
+.scroll-display-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 </style>
