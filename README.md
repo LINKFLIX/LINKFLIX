@@ -4,7 +4,7 @@
 
 ## 🔅 Introduction  
 - 넷플릭스에서 현재 시청 중인 영상의 PPL 제품을 바로 확인할 수 있는 **크롬 확장 프로그램**  
-- Link + Netflix의 합성어로 넷플릭스와 연결된 서비스임을 의미  
+- **Link** + **Netflix**의 합성어로 넷플릭스와 연결된 서비스임을 의미  
 
 ## ❓ How to use  
 
@@ -29,7 +29,7 @@
 
 - **Deployment**  
   - <img src="https://img.shields.io/badge/aws-F28202.svg?&style=for-the-badge&logo=aws&logoColor=white"> <img src="https://img.shields.io/badge/docker-05D7F8.svg?&style=for-the-badge&logo=docker&logoColor=white">
-  - Setting
+  - **Setting**
     - URL : https://k5a104.p.ssafy.io:/
     - 배포 여부 : O
     - HTTPS 적용 : O
