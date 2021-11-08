@@ -58,3 +58,14 @@
   overflow: unset;
   border-radius: unset;
 }
+h4 {
+  font-size: unset;
+  margin-top: unset;
+  margin-bottom: unset;
+  line-height: unset;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
