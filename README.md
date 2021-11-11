@@ -15,12 +15,12 @@
 Netflix: <https://www.netflix.com>  
 
 ### :three: 영상 속 궁금했던 제품들을 확인  
-![linkflix1](md-images/linkflix1.gif)  
+![linkflix1](md-images/linkflix1.gif){: width="100%"}  
 - 하단에 있는 **장바구니 버튼**을 클릭 후 보여지는 사이드바에서 해당 회차의 상품 정보를 모두 확인할 수 있습니다.  
 - 영상 속 상품이 나오닌 시간을 **타임라인**에 표시하여 해당 상품을 영상 내에서 바로 찾아볼 수 있습니다.
 
 ### :four: 실시간 가격 비교된 최저가 쇼핑몰로 연결!  
-![linkflix2](md-images/linkflix2.gif)  
+![linkflix2](md-images/linkflix2.gif){: width="100%"}    
 - 실시간으로 가격 비교된 쇼핑몰을 확인할 수 있습니다.  
 - 가격 순으로 보여지며, 원하는 쇼핑몰을 클릭하면 해당 홈페이지로 바로 이동합니다.  
 
