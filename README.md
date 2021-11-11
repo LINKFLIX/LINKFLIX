@@ -12,11 +12,12 @@
 ![chromestore](md-images/chromestore.JPG)  
 
 ### :two: 넷플릭스 접속 후 원하는 콘텐츠 선택  
-*현재 갯마을 차차차 1~3화만 확인 가능*  
+*현재 `tvN 드라마 갯마을 차차차` 1~3화만 확인 가능*  
 Netflix: <https://www.netflix.com>  
 
 ### :three: 영상 속 궁금했던 제품들을 확인  
-<img src="/md-images/linkflix1.gif" width="100%" alt="linkflix1"></img><br/>  
+<img src="/md-images/linkflix.gif" width="100%" alt="linkflix1"></img><br/>  
+`출처: tvN 드라마 <갯마을 차차차>`
 - 하단에 있는 **장바구니 버튼**을 클릭 후 보여지는 사이드바에서 해당 회차의 상품 정보를 모두 확인할 수 있습니다.  
 - 영상 속 상품이 나오는 시간을 **타임라인**에 표시하여 해당 상품을 영상 내에서 바로 찾아볼 수 있습니다.
 
