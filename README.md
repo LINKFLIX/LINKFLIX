@@ -2,8 +2,7 @@
 
 ![logo](md-images/linkflix-logo.png)  
 
-## 🔅 Introduction  
-- **Link**와 **Netflix**의 합성어  
+## 🔅 Introduction   
 - 현재 시청 중인 넷플릭스 영상 속 제품에 대해서 바로 구매 가능한 사이트로 연결해주는 **크롬 확장 프로그램**    
 
 ## ❓ How to use  
