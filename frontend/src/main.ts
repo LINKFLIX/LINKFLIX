@@ -166,9 +166,9 @@ const timeStringToMills = (format: string) => {
 const getProductTimelineEl = (left: number) => {
   const el = document.createElement('div');
   el.setAttribute('data-uia', 'linkflix-product-timeline');
-  el.style.width = '3px';
+  el.style.width = '7px';
   el.style.height = '100%';
-  el.style.backgroundColor = 'rgba(232, 232, 232, 0.5)';
+  el.style.backgroundColor = 'rgba(6, 69, 173, 0.7)';
   el.style.boxSizing = 'border-box';
   el.style.position = 'absolute';
   el.style.left = `${left}px`;
