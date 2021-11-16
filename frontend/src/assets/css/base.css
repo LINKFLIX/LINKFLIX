@@ -48,7 +48,7 @@
 }
 
 /* 
-  netflix 내 .progress와 부트스트랩 5의 .progress가 겹쳐
+  netflix css와 부트스트랩 5의 css가 겹쳐
   쓸데없이 적용되는 css를 unset한다.
 */
 .progress {
@@ -68,4 +68,7 @@ h4 {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+a:hover {
+  color: unset;
 }

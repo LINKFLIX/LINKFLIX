@@ -1,7 +1,8 @@
 {
   "name": "LINKFLIX",
-  "version": "1.0",
+  "version": "1.0.2",
   "manifest_version": 3,
+  "description": "We'll connect you to the site where you can purchase the products in the Netflix video you're currently watching.",
   "action": {
     "default_icon": {
       "16": "assets/linkflix-icon-16.png",
@@ -18,7 +19,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.netflix.com/*"],
-      "js": ["content-scripts/main.ts"]
+      "js": ["main.ts"]
     }
   ]
 }
