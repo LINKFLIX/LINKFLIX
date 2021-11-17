@@ -20,8 +20,6 @@ export default defineComponent({
 body {
   position: relative;
   height: 100%;
-  width: 95%;
-  background-color: #3c3e42;
 }
 
 #app {
@@ -30,7 +28,5 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 </style>
