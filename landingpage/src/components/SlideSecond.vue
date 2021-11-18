@@ -71,3 +71,9 @@ export default defineComponent({
   components: { SlideTemplate, Swiper, SwiperSlide },
 });
 </script>
+
+<style scoped>
+.SlideTemplate {
+  margin-top: 15%;
+}
+</style>
