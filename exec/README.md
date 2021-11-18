@@ -34,7 +34,7 @@ docker, jenkins, nginx를 통해 백엔드, 프론트엔드를 빌드하고 배�
   cd ../landingpage
   npm install
   npm run build
-   ```
+  ```
 
    - GitHub에 대한 hook 설정과 Node 설치가 필요합니다.
 
