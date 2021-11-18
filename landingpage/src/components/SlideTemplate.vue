@@ -12,9 +12,7 @@
       </div>
       <div class="col-1"></div>
       <div class="col-7">
-        <div>
-          <slot name="image-container"></slot>
-        </div>
+        <slot name="image-container"></slot>
       </div>
     </div>
   </div>

@@ -11,9 +11,6 @@
       <SlideFirst />
     </swiper-slide>
     <swiper-slide>
-      <SlideExample />
-    </swiper-slide>
-    <swiper-slide>
       <SlideSecond />
     </swiper-slide>
     <swiper-slide>
@@ -30,7 +27,6 @@ import SlideFirst from './SlideFirst.vue';
 import SlideSecond from './SlideSecond.vue';
 import SlideThird from './SlideThird.vue';
 import SlideFourth from './SlideFourth.vue';
-import SlideExample from './SlideExample.vue';
 import { defineComponent } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.min.css';
@@ -50,7 +46,6 @@ export default defineComponent({
     SlideSecond,
     SlideThird,
     SlideFourth,
-    SlideExample,
   },
   methods: {
     onSwiper(swiper: any) {

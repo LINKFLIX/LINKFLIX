@@ -1,17 +1,30 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-4" style="text-align: left">
-        <div style="font-weight: 900; font-size: 90px; margin-bottom: 100px">
-          <p>MENUAL</p>
-        </div>
-        <div style="font-size: 30px; font-weight: 600">
-          <p style="margin-bottom: 35px">버튼만 누르면</p>
-          <p style="margin-bottom: 35px">영상 속 제품을 쉽고 편하게</p>
-          <p style="margin-bottom: 36px">구매하실 수 있습니다</p>
-        </div>
+  <SlideTemplate>
+    <template v-slot:subtitle>Easy to use</template>
+    <template v-slot:description>
+      <div>
+        <span
+          class="d-inline-flex border border-1 rounded p-1 me-1"
+          style="width: 2.5rem"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="bi bi-cart3"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+            />
+          </svg>
+        </span>
+        <span>을 누르면 영상 속</span>
       </div>
-      <div class="col-8">
+      <div>제품을 <b>쉽고 편하게</b></div>
+      <div>구매할 수 있습니다.</div>
+    </template>
+    <template v-slot:image-container>
+      <div class="h-100 d-flex justify-content-center align-items-center">
         <swiper
           :spaceBetween="30"
           :centeredSlides="true"
@@ -32,75 +45,27 @@
           </swiper-slide>
         </swiper>
       </div>
-    </div>
-
-  </div>
+    </template>
+  </SlideTemplate>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/swiper.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import SwiperCore, { Autoplay, Pagination } from 'swiper/core';
+import SlideTemplate from './SlideTemplate.vue';
 
-SwiperCore.use([Autoplay, Pagination]);
 export default defineComponent({
-  name: 'slideSecond',
   components: {
+    SlideTemplate,
     Swiper,
     SwiperSlide,
-  },
-  methods: {
-    onSwiper(swiper: any) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log('slide change');
-    },
   },
 });
 </script>
 
 <style scoped>
-.title {
-  list-style: none;
-  padding-left: 0px;
-  font-size: 20px;
-  font-weight: 700;
-}
-.eplist {
-  list-style: none;
-  padding-left: 0px;
-  font-size: 15px;
-  font-weight: 500;
-}
-li {
-  float: left;
-}
-.panel {
-  list-style: none;
-}
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .swiper-slide img {
-  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-
 }
 </style>
