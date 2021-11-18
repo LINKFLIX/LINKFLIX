@@ -26,14 +26,14 @@ docker, jenkins, nginx를 통해 백엔드, 프론트엔드를 빌드하고 배�
    cd backend
    chmod 777 gradlew
    ./gradlew clean build
-  chmod 777 dockerbuild.sh
-  sh dockerbuild.sh
-  cd ../crawl
-  chmod 777 dockerbuild.sh
-  sh dockerbuild.sh
-  cd ../landingpage
-  npm install
-  npm run build
+   chmod 777 dockerbuild.sh
+   sh dockerbuild.sh
+   cd ../crawl
+   chmod 777 dockerbuild.sh
+   sh dockerbuild.sh
+   cd ../landingpage
+   npm install
+   npm run build
   ```
 
    - GitHub에 대한 hook 설정과 Node 설치가 필요합니다.
