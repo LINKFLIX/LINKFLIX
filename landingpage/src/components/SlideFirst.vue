@@ -2,7 +2,7 @@
   <div class="w-100" style="padding: 140px 120px; height: 100vh">
     <div class="d-flex h-100 overflow-auto align-items-center">
       <YouTube
-        src="https://youtu.be/k4fz4oOScPM"
+        src="https://youtu.be/mDbXRICn3Hw"
         @ready="onReady"
         ref="youtube"
         width="800"
