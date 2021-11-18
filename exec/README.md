@@ -42,9 +42,7 @@ docker, jenkins, nginx를 통해 백엔드, 프론트엔드를 빌드하고 배�
 
    - `Dockerfile` : `dockerbuild.sh`에서 `docker build` 명령어에 필요한 설정파일입니다. 백엔드를 도커라이징 하면서 JDK, 포트, 볼륨을 설정합니다.
 
-5. nginx 설치
-
-6. nginx 및 https 설정
+ nginx 및 https 설정
 
    jenkins를 통해 빌드된 프론트엔드의 `index.html`을 nginx에 연결합니다.
 
