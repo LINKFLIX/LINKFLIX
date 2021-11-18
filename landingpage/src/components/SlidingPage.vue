@@ -6,6 +6,8 @@
       clickable: true,
     }"
     :navigation="true"
+    :direction="'vertical'"
+    :mousewheel="ture"
   >
     <swiper-slide>
       <SlideFirst />
