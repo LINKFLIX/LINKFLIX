@@ -5,7 +5,6 @@
     id="offcanvasRight"
     aria-labelledby="offcanvasRightLabel"
     style="width: 400px"
-    ref="sidebarRef"
   >
     <div class="offcanvas-header m-4 p-0">
       <div id="offcanvasRightLabel" class="fs-medium p-0">
@@ -22,28 +21,22 @@
       class="offcanvas-body p-0 scroll-display-none"
       style="overflow-x: hidden;"
     >
-      <ProductList :isShow="isShow"></ProductList>
+      <ProductList :products="products"></ProductList>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { defineProps, PropType } from 'vue';
 import ProductList from '../ProductList/ProductList.vue';
 import { logoEncodedBase64 } from '../../assets/images/logo';
+import { Product } from '../../types';
 
-const isShow = ref(false);
-const sidebarRef = ref<Element>();
-
-onMounted(() => {
-  if (sidebarRef.value) {
-    sidebarRef.value.addEventListener('show.bs.offcanvas', () => {
-      isShow.value = true;
-    });
-    sidebarRef.value.addEventListener('hide.bs.offcanvas', () => {
-      isShow.value = false;
-    });
-  }
+const { products } = defineProps({
+  products: {
+    type: Object as PropType<Product[]>,
+    required: true,
+  },
 });
 </script>
 

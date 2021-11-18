@@ -11,6 +11,9 @@
       <SlideFirst />
     </swiper-slide>
     <swiper-slide>
+      <SlideExample />
+    </swiper-slide>
+    <swiper-slide>
       <SlideSecond />
     </swiper-slide>
     <swiper-slide>
@@ -27,6 +30,7 @@ import SlideFirst from './SlideFirst.vue';
 import SlideSecond from './SlideSecond.vue';
 import SlideThird from './SlideThird.vue';
 import SlideFourth from './SlideFourth.vue';
+import SlideExample from './SlideExample.vue';
 import { defineComponent } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.min.css';
@@ -46,6 +50,7 @@ export default defineComponent({
     SlideSecond,
     SlideThird,
     SlideFourth,
+    SlideExample,
   },
   methods: {
     onSwiper(swiper: any) {
@@ -58,26 +63,4 @@ export default defineComponent({
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>
+<style scoped></style>

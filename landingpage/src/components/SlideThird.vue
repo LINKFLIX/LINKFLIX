@@ -38,12 +38,18 @@
         </ul>
       </div>
     </div>
+
   </div>
 </template>
 
 <script lang="ts">
 export default {
   name: 'slideThird',
+  data() {
+    return {
+      imgsrc: require('../assets/oberlaysidebar.png'),
+    };
+  },
 };
 </script>
 
