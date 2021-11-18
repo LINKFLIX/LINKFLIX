@@ -88,7 +88,7 @@ docker, jenkins, nginx를 통해 백엔드, 프론트엔드를 빌드하고 배�
 
 # 3. 데이터베이스 덤프
 
-[linkflix_products.sql](./linkflix_products.sql)
+[linkflix_products.sql](./linkflix_products.sql)  
 [linkflix_timelines.sql](./linkflix_timelines.sql)
 
 # 4. 시연 시나리오
