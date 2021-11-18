@@ -3,8 +3,8 @@
     <template v-slot:subtitle>LINKFLIX?</template>
     <template v-slot:description>
       <div>
-        LINK + NETFLIX의 합성어로, 넷플릭스 영상에 나오는
-        <b>제품으로 연결</b>시켜주는 서비스입니다.
+        LINK + NETFLIX의 합성어로, 넷플릭스 영상에 등장하는
+        <b>제품과 당신을 연결</b>시켜주는 서비스입니다.
       </div>
     </template>
     <template v-slot:image-container>
