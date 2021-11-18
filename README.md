@@ -12,7 +12,7 @@
 ![chromestore](md-images/chromestore.JPG)  
 
 ### :two: 넷플릭스 접속 후 원하는 콘텐츠 선택  
-**현재 `tvN 드라마 '갯마을 차차차' 1~3화`만 확인 가능**  
+**현재 `tvN 드라마 '갯마을 차차차' 1~3화`, `영화 '기생충'` 이용 가능**  
 Netflix: <https://www.netflix.com>  
 
 ### :three: 영상 속 궁금했던 제품들을 확인  
