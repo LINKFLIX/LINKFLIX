@@ -1,19 +1,12 @@
 <template>
   <swiper
-    :spaceBetween="30"
-    :centeredSlides="true"
-    :pagination="{
-      clickable: true,
-    }"
-    :navigation="true"
     :direction="'vertical'"
-    :mousewheel="ture"
+    :mousewheel="true"
+    :autoHeight="true"
+    :speed="600"
   >
     <swiper-slide>
       <SlideFirst />
-    </swiper-slide>
-    <swiper-slide>
-      <SlideExample />
     </swiper-slide>
     <swiper-slide>
       <SlideSecond />
@@ -32,16 +25,14 @@ import SlideFirst from './SlideFirst.vue';
 import SlideSecond from './SlideSecond.vue';
 import SlideThird from './SlideThird.vue';
 import SlideFourth from './SlideFourth.vue';
-import SlideExample from './SlideExample.vue';
 import { defineComponent } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
-import 'swiper/components/navigation/navigation.min.css';
-import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core';
+import SwiperCore, { Autoplay, Pagination, Mousewheel } from 'swiper/core';
 
-SwiperCore.use([Autoplay, Pagination, Navigation]);
+SwiperCore.use([Autoplay, Pagination, Mousewheel]);
 
 export default defineComponent({
   name: 'HelloWorld',
@@ -52,7 +43,6 @@ export default defineComponent({
     SlideSecond,
     SlideThird,
     SlideFourth,
-    SlideExample,
   },
   methods: {
     onSwiper(swiper: any) {
@@ -65,4 +55,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.swiper {
+  display: flex;
+}
+</style>

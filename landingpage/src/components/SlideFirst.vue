@@ -1,18 +1,27 @@
 <template>
-  <div class="content">
-    <h1>넷플릭스를 보다가 영상 속 제품에 대해서 궁금한 적 없으신가요?</h1>
-    <h2>
-      <img
-        :src="imgsrc"
-        alt="linkflix"
-        style="width: 350px"
-        class="linkflix-logo"
-      />
-      가 알려드립니다!
-    </h2>
-    <button type="button" class="btn btn-info" v-on:click="moveTo">
-      Download
-    </button>
+  <div class="w-100" style="padding: 140px 120px; height: 100vh">
+    <div class="d-flex h-100 overflow-auto align-items-center">
+      <div>
+        <div class="display-1 mb-5">
+          넷플릭스를 보다가 영상 속 제품에 대해서 궁금한 적 없으신가요?
+        </div>
+        <div class="display-1">
+          <span class="d-inline-block">
+            <img :src="imgsrc" alt="linkflix" style="width: 350px" />
+          </span>
+          가 알려드립니다!
+        </div>
+        <div class="text-center" style="margin-top: 5rem">
+          <button
+            type="button"
+            class="btn btn-primary download-btn py-3 px-5 text-white"
+            v-on:click="moveTo"
+          >
+            <span class="h1">DOWNLOAD</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,37 +44,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.linkflix-logo {
-  display: inline;
-  margin-left: auto;
-  margin-right: auto;
-}
-.content {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  margin-left: 5%;
-  /* background: linear-gradient(-45deg, #94969c, #3c3e42, #000000); */
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  vertical-align: middle;
-}
-
-h1 {
-  margin-top: 10%;
-  font-size: 120px;
-}
-
-h2 {
-  font-size: 120px;
-}
-button {
-  margin-top: 5%;
-  margin-left: 35%;
-  font-size: 80px;
-  background-color: #19b5e0;
-  color: white;
-  cursor: pointer;
-}
-</style>
+<style scoped></style>

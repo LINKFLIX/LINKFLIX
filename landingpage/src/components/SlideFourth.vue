@@ -1,79 +1,39 @@
 <template>
-  <div class="content">
-    <img
-      :src="imgsrc"
-      alt="linkflix"
-      style="width: 50%"
-      class="linkflix-logo"
-    />
-    <h1>아이템 상세 설명</h1>
-  </div>
+  <SlideTemplate>
+    <template v-slot:subtitle>Beta</template>
+    <template v-slot:description>
+      <div>현재 LINKFLIX는 일부 영상에 한해서 이용 가능합니다.</div>
+    </template>
+    <template v-slot:image-container>
+      <div class="h-100 d-flex justify-content-center align-items-center">
+        <div class="row justify-content-center gap-3 m-0">
+          <div class="col-5 p-0">
+            <img
+              class="w-100 mb-2"
+              :src="`https://file.mk.co.kr/meet/neds/2021/08/image_readtop_2021_774018_16285690364746521.jpg`"
+              style="object-fit: contain"
+            />
+            <div class="text-center fs-5">갯마을 차차차 1 ~ 3 화</div>
+          </div>
+          <div class="col-5 p-0">
+            <img
+              class="w-100 mb-2 ml-1"
+              :src="`https://upload.wikimedia.org/wikipedia/ko/6/60/%EA%B8%B0%EC%83%9D%EC%B6%A9_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg`"
+              style="border: solid 1px lightgrey; object-fit: contain"
+            />
+            <div class="text-center fs-5">기생충</div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </SlideTemplate>
 </template>
 
 <script lang="ts">
-export default {
-  name: 'slideFourth',
-  data() {
-    return {
-      imgsrc: require('../assets/overlayitem.png'),
-    };
-  },
-};
+import { defineComponent } from 'vue';
+import SlideTemplate from './SlideTemplate.vue';
+
+export default defineComponent({
+  components: { SlideTemplate },
+});
 </script>
-<style scoped>
-.linkflix-logo {
-  display: block;
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.content {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: #3c3e42;
-  /* background: linear-gradient(-45deg, #94969c, #3c3e42, #000000); */
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  vertical-align: middle;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@font-face {
-  font-family: 'SBAggroB';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-h1 {
-  margin-top: 5%;
-  font-family: 'SBAggroB';
-  font-size: 50px;
-  color: white;
-}
-
-h2 {
-  font-family: 'SBAggroB';
-  font-size: 50px;
-  color: white;
-}
-button {
-  font-family: 'SBAggroB';
-  font-size: 30px;
-  background-color: #19b5e0;
-  color: white;
-  cursor: pointer;
-}
-</style>

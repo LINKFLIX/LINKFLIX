@@ -1,72 +1,92 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-4" style="text-align: left">
-        <div style="font-weight: 900; font-size: 90px; margin-bottom: 100px">
-          <p>BETA</p>
+  <SlideTemplate>
+    <template v-slot:subtitle>Easy to use</template>
+    <template v-slot:description>
+      <div>
+        <div>
+          <span>LINKFLIX를 설치하면 넷플릭스 비디오 UI에 </span>
+          <span
+            class="d-inline-flex border border-1 rounded p-1 me-1"
+            style="width: 2.5rem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-cart3"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </span>
+          <span>버튼이 생깁니다. </span>
         </div>
-        <div style="font-size: 30px; font-weight: 600">
-          <p style="margin-bottom: 35px">현재 LINKFLIX는</p>
-          <p style="margin-bottom: 35px">일부 영상에서 이용 가능합니다</p>
-          <p style="margin-bottom: 36px">서비스 영상은</p>
-          <p style="margin-bottom: 36px">지속적으로 업데이트 됩니다</p>
+        <div>
+          <span
+            class="d-inline-flex border border-1 rounded p-1 me-1"
+            style="width: 2.5rem"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="bi bi-cart3"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+          </span>
+          <span
+            >을 누르면 영상 속 제품을 <b>쉽고 편하게</b> 찾을 수 있습니다.</span
+          >
         </div>
       </div>
-      <div class="col-8" style="display: flex; justify-content: space-around">
-        <ul class="title">
-          <li>
-            <img
-              :src="`https://file.mk.co.kr/meet/neds/2021/08/image_readtop_2021_774018_16285690364746521.jpg`"
-              style="width: 330px; height: 470px; margin-bottom: 25px"
-            />
-            <p>갯마을 차차차 1 ~ 3 화</p>
-          </li>
-        </ul>
-        <ul class="title">
-          <li>
-            <img
-              :src="`https://upload.wikimedia.org/wikipedia/ko/6/60/%EA%B8%B0%EC%83%9D%EC%B6%A9_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg`"
-              style="
-                width: 330px;
-                height: 470px;
-                margin-bottom: 25px;
-                border: solid 1px lightgrey;
-              "
-            />
-            <p>기생충</p>
-          </li>
-        </ul>
+    </template>
+    <template v-slot:image-container>
+      <div class="h-100 d-flex justify-content-center align-items-center">
+        <swiper
+          :spaceBetween="30"
+          :centeredSlides="true"
+          :navigation="false"
+          :loop="true"
+          :autoplay="{
+            delay: 2500,
+          }"
+        >
+          <swiper-slide>
+            <img src="../img/ep1_0.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../img/ep1_1.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../img/ep1_2.png" />
+          </swiper-slide>
+        </swiper>
       </div>
-    </div>
-
-  </div>
+    </template>
+  </SlideTemplate>
 </template>
 
 <script lang="ts">
-export default {
-  name: 'slideThird',
-  data() {
-    return {
-      imgsrc: require('../assets/oberlaysidebar.png'),
-    };
+import { defineComponent } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import SlideTemplate from './SlideTemplate.vue';
+
+export default defineComponent({
+  components: {
+    SlideTemplate,
+    Swiper,
+    SwiperSlide,
   },
-};
+});
 </script>
 
 <style scoped>
-.title {
-  list-style: none;
-  padding-left: 0px;
-  font-size: 20px;
-  font-weight: 700;
-}
-.eplist {
-  list-style: none;
-  padding-left: 0px;
-  font-size: 15px;
-  font-weight: 500;
-}
-li {
-  float: left;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
 }
 </style>
