@@ -5,8 +5,12 @@
         <div class="display-5">Available Contents</div>
       </div>
       <div class="col-8 text-center h-100" id="slide-fourth-swiper">
-        <swiper class="h-100" :spaceBetween="30" :loop="true">
-          <!-- :autoplay="{ delay: 2500 }" -->
+        <swiper
+          class="h-100"
+          :spaceBetween="30"
+          :loop="true"
+          :autoplay="{ delay: 2500 }"
+        >
           <swiper-slide class="h-100">
             <div class="d-flex w-100 h-100">
               <div class="col m-3">
