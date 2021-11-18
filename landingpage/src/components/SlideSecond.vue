@@ -1,71 +1,43 @@
 <template>
   <SlideTemplate>
-    <template v-slot:subtitle>Easy to use</template>
+    <template v-slot:subtitle>LINKFLIX?</template>
     <template v-slot:description>
       <div>
-        <span
-          class="d-inline-flex border border-1 rounded p-1 me-1"
-          style="width: 2.5rem"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="bi bi-cart3"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-            />
-          </svg>
-        </span>
-        <span>을 누르면 영상 속</span>
+        LINK + NETFLIX의 합성어로, 넷플릭스 영상에 나오는
+        <b>제품으로 연결</b>시켜주는 서비스입니다.
       </div>
-      <div>제품을 <b>쉽고 편하게</b></div>
-      <div>구매할 수 있습니다.</div>
     </template>
     <template v-slot:image-container>
-      <div class="h-100 d-flex justify-content-center align-items-center">
-        <swiper
-          :spaceBetween="30"
-          :centeredSlides="true"
-          :navigation="false"
-          :loop="true"
-          :autoplay="{
-            delay: 2500,
-          }"
-        >
-          <swiper-slide>
-            <img src="../img/ep1_0.png" />
-          </swiper-slide>
-          <swiper-slide>
-            <img src="../img/ep1_1.png" />
-          </swiper-slide>
-          <swiper-slide>
-            <img src="../img/ep1_2.png" />
-          </swiper-slide>
-        </swiper>
-      </div>
+      <img
+        src="https://w.namu.la/s/4acb2ead656c5ff7bf12a414dd0b719e2c707612a740a2aa5872565a3cd09b610a39dfeae15c06706b81098ec44bc393dfcbafe903c7404eb6280de2641ec5496d55620c3f0005eef3e76de56e162b622350456c211454ea9d223fa3f038477983caa3dbd048700677cc9e475eaa5350"
+        alt="갯마을차차차"
+        style="width: 24%"
+      />
+      <img
+        src="https://w.namu.la/s/00ea3302678c6d6e2fdd3fdb07bf5f9374776d97c28ac711f51a350a3cc95ecc2ab01f158369088c9d8f78d334c5883d9ac4421fae058ab882c49ed8d8cf0709f8f8307ab1f21fc05a13ddc25130913fc4ba183ff4a991b0c38b3a4751bd8c11"
+        alt="킹덤"
+        style="width: 23%; margin-left: 10px"
+      />
+      <img
+        src="https://w.namu.la/s/c8497e89ea0df1a739a5d81b172ff083df2cb94bf0470154ea9f6963a24234f13d949a6fa1c6f80c6e42094bb1d5515b56fd93b10f95077968796cad878c8e859a6c16e37ce29a68c7656f151e3ce95e41ec4d8e408eb8d7074790750e295a7987d89ec23fb80ed039a83da2daf54a6c"
+        alt="오징어게임"
+        style="width: 23%; margin-left: 10px"
+      />
+      <img
+        src="https://w.namu.la/s/a6b9ccdba583ad1881261283462efb5f40ce4be81668d6e13517856f1e90dbbd7340bb6d03a0ea6576732acf2284094e8ebfd0d136abfa107f8f6fc577d979f1ba7cbf1f790396275effdb94b4a0527f3c855ff14ebe37913802a313b13a50dfa4f2b14552e60664c994c963dbefcca4"
+        alt="스위트홈"
+        style="width: 23%; margin-left: 10px"
+      />
     </template>
   </SlideTemplate>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
 import SlideTemplate from './SlideTemplate.vue';
+import { Carousel, Pagination, Slide } from 'vue3-carousel';
 
 export default defineComponent({
-  components: {
-    SlideTemplate,
-    Swiper,
-    SwiperSlide,
-  },
+  components: { SlideTemplate },
 });
 </script>
-
-<style scoped>
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-}
-</style>

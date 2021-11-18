@@ -1,31 +1,50 @@
 <template>
   <SlideTemplate>
-    <template v-slot:subtitle>Beta</template>
+    <template v-slot:subtitle>Easy to use</template>
     <template v-slot:description>
-      <div>현재 LINKFLIX는</div>
-      <div>일부 영상에서</div>
-      <div>이용 가능합니다.</div>
+      <div>
+        <span>LINKFLIX를 설치한 후에 </span>
+        <span
+          class="d-inline-flex border border-1 rounded p-1 me-1"
+          style="width: 2.5rem"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="bi bi-cart3"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+            />
+          </svg>
+        </span>
+        <span
+          >을 누르면 영상 속 제품을 <b>쉽고 편하게</b> 찾을 수 있습니다.</span
+        >
+      </div>
     </template>
     <template v-slot:image-container>
       <div class="h-100 d-flex justify-content-center align-items-center">
-        <div class="row justify-content-center gap-3 m-0">
-          <div class="col-5 p-0">
-            <img
-              class="w-100 mb-2"
-              :src="`https://file.mk.co.kr/meet/neds/2021/08/image_readtop_2021_774018_16285690364746521.jpg`"
-              style="object-fit: contain"
-            />
-            <div class="text-center">갯마을 차차차 1 ~ 3 화</div>
-          </div>
-          <div class="col-5 p-0">
-            <img
-              class="w-100 mb-2 ml-1"
-              :src="`https://upload.wikimedia.org/wikipedia/ko/6/60/%EA%B8%B0%EC%83%9D%EC%B6%A9_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg`"
-              style="border: solid 1px lightgrey; object-fit: contain"
-            />
-            <div class="text-center">기생충</div>
-          </div>
-        </div>
+        <swiper
+          :spaceBetween="30"
+          :centeredSlides="true"
+          :navigation="false"
+          :loop="true"
+          :autoplay="{
+            delay: 2500,
+          }"
+        >
+          <swiper-slide>
+            <img src="../img/ep1_0.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../img/ep1_1.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../img/ep1_2.png" />
+          </swiper-slide>
+        </swiper>
       </div>
     </template>
   </SlideTemplate>
@@ -33,9 +52,21 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 import SlideTemplate from './SlideTemplate.vue';
 
 export default defineComponent({
-  components: { SlideTemplate },
+  components: {
+    SlideTemplate,
+    Swiper,
+    SwiperSlide,
+  },
 });
 </script>
+
+<style scoped>
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+</style>
