@@ -1,6 +1,6 @@
 <template>
   <div class="w-100" style="padding: 140px 120px; height: 100vh">
-    <div class="d-flex h-100 overflow-auto">
+    <div class="d-flex h-100 overflow-auto align-items-center">
       <div class="col-4">
         <div class="display-1" style="margin: 40px 0">
           <slot name="subtitle"></slot>
