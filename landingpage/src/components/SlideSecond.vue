@@ -1,81 +1,106 @@
 <template>
-  <div class="content">
-    <img
-      :src="imgsrc"
-      alt="linkflix"
-      style="width: 50%"
-      class="linkflix-logo"
-    />
-    <h1>
-      익스텐션을 설치한 후 넷플릭스 영상 재생창에 생긴 카트모양을 클릭해주세요!
-    </h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-4" style="text-align: left">
+        <div style="font-weight: 900; font-size: 90px; margin-bottom: 100px">
+          <p>MENUAL</p>
+        </div>
+        <div style="font-size: 30px; font-weight: 600">
+          <p style="margin-bottom: 35px">버튼만 누르면</p>
+          <p style="margin-bottom: 35px">영상 속 제품을 쉽고 편하게</p>
+          <p style="margin-bottom: 36px">구매하실 수 있습니다</p>
+        </div>
+      </div>
+      <div class="col-8">
+        <swiper
+          :spaceBetween="30"
+          :centeredSlides="true"
+          :navigation="false"
+          :loop="true"
+          :autoplay="{
+            delay: 2500,
+          }"
+        >
+          <swiper-slide>
+            <img src="../img/ep1_0.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../img/ep1_1.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="../img/ep1_2.png" />
+          </swiper-slide>
+        </swiper>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
+import 'swiper/components/pagination/pagination.min.css';
+import SwiperCore, { Autoplay, Pagination } from 'swiper/core';
+
+SwiperCore.use([Autoplay, Pagination]);
+export default defineComponent({
   name: 'slideSecond',
-  data() {
-    return {
-      imgsrc: require('../assets/overlaybtn.png'),
-    };
+  components: {
+    Swiper,
+    SwiperSlide,
   },
-};
+  methods: {
+    onSwiper(swiper: any) {
+      console.log(swiper);
+    },
+    onSlideChange() {
+      console.log('slide change');
+    },
+  },
+});
 </script>
+
 <style scoped>
-.linkflix-logo {
-  display: block;
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
+.title {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 20px;
+  font-weight: 700;
 }
-.content {
-  position: relative;
-  height: 100%;
+.eplist {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 15px;
+  font-weight: 500;
+}
+li {
+  float: left;
+}
+.panel {
+  list-style: none;
+}
+.swiper-container {
   width: 100%;
-  background-color: #3c3e42;
-  /* background: linear-gradient(-45deg, #94969c, #3c3e42, #000000); */
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  vertical-align: middle;
+  height: 100%;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@font-face {
-  font-family: 'SBAggroB';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-h1 {
-  margin-top: 5%;
-  font-family: 'SBAggroB';
-  font-size: 50px;
-  color: white;
-}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-h2 {
-  font-family: 'SBAggroB';
-  font-size: 50px;
-  color: white;
-}
-button {
-  font-family: 'SBAggroB';
-  font-size: 30px;
-  background-color: #19b5e0;
-  color: white;
-  cursor: pointer;
 }
 </style>

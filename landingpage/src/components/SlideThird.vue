@@ -1,12 +1,44 @@
 <template>
-  <div class="content">
-    <img
-      :src="imgsrc"
-      alt="linkflix"
-      style="width: 50%"
-      class="linkflix-logo"
-    />
-    <h1>사이드바 설명</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-4" style="text-align: left">
+        <div style="font-weight: 900; font-size: 90px; margin-bottom: 100px">
+          <p>BETA</p>
+        </div>
+        <div style="font-size: 30px; font-weight: 600">
+          <p style="margin-bottom: 35px">현재 LINKFLIX는</p>
+          <p style="margin-bottom: 35px">일부 영상에서 이용 가능합니다</p>
+          <p style="margin-bottom: 36px">서비스 영상은</p>
+          <p style="margin-bottom: 36px">지속적으로 업데이트 됩니다</p>
+        </div>
+      </div>
+      <div class="col-8" style="display: flex; justify-content: space-around">
+        <ul class="title">
+          <li>
+            <img
+              :src="`https://file.mk.co.kr/meet/neds/2021/08/image_readtop_2021_774018_16285690364746521.jpg`"
+              style="width: 330px; height: 470px; margin-bottom: 25px"
+            />
+            <p>갯마을 차차차 1 ~ 3 화</p>
+          </li>
+        </ul>
+        <ul class="title">
+          <li>
+            <img
+              :src="`https://upload.wikimedia.org/wikipedia/ko/6/60/%EA%B8%B0%EC%83%9D%EC%B6%A9_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg`"
+              style="
+                width: 330px;
+                height: 470px;
+                margin-bottom: 25px;
+                border: solid 1px lightgrey;
+              "
+            />
+            <p>기생충</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -20,60 +52,21 @@ export default {
   },
 };
 </script>
+
 <style scoped>
-.linkflix-logo {
-  display: block;
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
+.title {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 20px;
+  font-weight: 700;
 }
-.content {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-color: #3c3e42;
-  /* background: linear-gradient(-45deg, #94969c, #3c3e42, #000000); */
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  vertical-align: middle;
+.eplist {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 15px;
+  font-weight: 500;
 }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@font-face {
-  font-family: 'SBAggroB';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-h1 {
-  margin-top: 5%;
-  font-family: 'SBAggroB';
-  font-size: 50px;
-  color: white;
-}
-
-h2 {
-  font-family: 'SBAggroB';
-  font-size: 50px;
-  color: white;
-}
-button {
-  font-family: 'SBAggroB';
-  font-size: 30px;
-  background-color: #19b5e0;
-  color: white;
-  cursor: pointer;
+li {
+  float: left;
 }
 </style>
