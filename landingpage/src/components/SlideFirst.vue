@@ -3,7 +3,6 @@
     <div class="d-flex h-100 overflow-auto align-items-center">
       <YouTube
         src="https://youtu.be/mDbXRICn3Hw"
-        @ready="onReady"
         ref="youtube"
         width="800"
         height="500"
@@ -17,7 +16,7 @@
         <div class="text-center" style="margin-top: 5rem; margin-left: 60%">
           <button
             type="button"
-            class="btn btn-primary download-btn py-3 px-5 text-white"
+            class="btn btn-primary py-3 px-5 text-white"
             v-on:click="moveTo"
           >
             <span class="h1">DOWNLOAD</span>

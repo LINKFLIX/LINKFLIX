@@ -3,6 +3,14 @@
     <div class="d-flex h-100 overflow-auto align-items-center">
       <div class="col-4 text-center">
         <div class="display-5">Available Contents</div>
+
+        <button
+          type="button"
+          class="btn btn-primary text-white mt-5 fs-5"
+          v-on:click="moveTo"
+        >
+          DOWNLOAD
+        </button>
       </div>
       <div class="col-8 text-center h-100" id="slide-fourth-swiper">
         <swiper
@@ -10,6 +18,7 @@
           :spaceBetween="30"
           :loop="true"
           :autoplay="{ delay: 2500 }"
+          :speed="725"
         >
           <swiper-slide class="h-100">
             <div class="d-flex w-100 h-100">
@@ -31,9 +40,9 @@
                 "
               >
                 <div>갯마을 차차차</div>
-                <div>Ep.01</div>
-                <div>Ep.02</div>
-                <div>Ep.03</div>
+                <div class="fs-5">Ep.01</div>
+                <div class="fs-5">Ep.02</div>
+                <div class="fs-5">Ep.03</div>
               </div>
             </div>
           </swiper-slide>
@@ -74,6 +83,14 @@ export default defineComponent({
   components: {
     Swiper,
     SwiperSlide,
+  },
+  methods: {
+    moveTo: function () {
+      window.open(
+        'https://chrome.google.com/webstore/detail/linkflix/oipofophdaejmlneoheopbmmobmjmlkf?hl=ko',
+        '_blank'
+      );
+    },
   },
 });
 </script>
