@@ -1,23 +1,26 @@
 <template>
-  <swiper
-    :direction="'vertical'"
-    :mousewheel="true"
-    :autoHeight="true"
-    :speed="600"
-  >
-    <swiper-slide>
-      <SlideFirst />
-    </swiper-slide>
-    <swiper-slide>
-      <SlideSecond />
-    </swiper-slide>
-    <swiper-slide>
-      <SlideThird />
-    </swiper-slide>
-    <swiper-slide>
-      <SlideFourth />
-    </swiper-slide>
-  </swiper>
+  <div style="min-width: 1000px">
+    <swiper
+      :centeredSlides="true"
+      :direction="'vertical'"
+      :mousewheel="true"
+      :autoHeight="true"
+      :speed="600"
+    >
+      <swiper-slide>
+        <SlideFirst />
+      </swiper-slide>
+      <swiper-slide>
+        <SlideSecond />
+      </swiper-slide>
+      <swiper-slide>
+        <SlideThird />
+      </swiper-slide>
+      <swiper-slide>
+        <SlideFourth />
+      </swiper-slide>
+    </swiper>
+  </div>
 </template>
 
 <script lang="ts">
@@ -35,7 +38,6 @@ import SwiperCore, { Autoplay, Pagination, Mousewheel } from 'swiper/core';
 SwiperCore.use([Autoplay, Pagination, Mousewheel]);
 
 export default defineComponent({
-  name: 'HelloWorld',
   components: {
     Swiper,
     SwiperSlide,
@@ -44,19 +46,7 @@ export default defineComponent({
     SlideThird,
     SlideFourth,
   },
-  methods: {
-    onSwiper(swiper: any) {
-      console.log(swiper);
-    },
-    onSlideChange() {
-      console.log('slide change');
-    },
-  },
 });
 </script>
 
-<style scoped>
-.swiper {
-  display: flex;
-}
-</style>
+<style scoped></style>

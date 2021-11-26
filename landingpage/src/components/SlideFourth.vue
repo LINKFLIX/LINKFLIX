@@ -6,7 +6,7 @@
 
         <button
           type="button"
-          class="btn btn-primary text-white mt-5 fs-5"
+          class="btn btn-primary text-white mt-5 py-2 px-4 fs-5"
           v-on:click="moveTo"
         >
           DOWNLOAD
@@ -25,8 +25,9 @@
               <div class="col m-3">
                 <img
                   class="h-100 shadow"
-                  src="https://file.mk.co.kr/meet/neds/2021/08/image_readtop_2021_774018_16285690364746521.jpg"
+                  :src="chachachaImage"
                   style="object-fit: contain"
+                  alt="기생충"
                 />
               </div>
               <div
@@ -51,8 +52,9 @@
               <div class="col m-3">
                 <img
                   class="h-100 shadow"
-                  src="http://t1.daumcdn.net/movie/cab3b02a7b274bd6838b80a5e481fedf1559021787090"
+                  :src="parasiteImage"
                   style="object-fit: contain"
+                  alt="갯마을 차차차"
                 />
               </div>
               <div
@@ -83,6 +85,12 @@ export default defineComponent({
   components: {
     Swiper,
     SwiperSlide,
+  },
+  data() {
+    return {
+      chachachaImage: require('../assets/cha-cha-cha.jpeg'),
+      parasiteImage: require('../assets/parasite.png'),
+    };
   },
   methods: {
     moveTo: function () {

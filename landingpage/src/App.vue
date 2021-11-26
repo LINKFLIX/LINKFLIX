@@ -1,16 +1,16 @@
 <template>
-  <Slide />
+  <SlidingPage />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import Slide from './components/SlidingPage.vue';
+import SlidingPage from './components/SlidingPage.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    Slide,
+    SlidingPage,
   },
   setup() {},
 });

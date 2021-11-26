@@ -1,25 +1,24 @@
 <template>
   <div class="w-100" style="padding: 140px 120px; height: 100vh">
     <div class="d-flex h-100 overflow-auto align-items-center">
-      <YouTube
-        src="https://youtu.be/mDbXRICn3Hw"
-        ref="youtube"
-        width="800"
-        height="500"
-      />
-      <div>
-        <div class="display-1" style="margin-left: 40%">
-          <span class="d-inline-block">
-            <img :src="imgsrc" alt="linkflix" style="width: 600px" />
-          </span>
+      <div class="col ratio ratio-16x9">
+        <iframe
+          src="https://www.youtube.com/embed/mDbXRICn3Hw?rel=0"
+          title="YouTube video"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="col ms-5">
+        <div class="w-100 text-center">
+          <img :src="imgsrc" alt="linkflix" class="w-75" />
         </div>
-        <div class="text-center" style="margin-top: 5rem; margin-left: 60%">
+        <div class="text-center mt-5">
           <button
             type="button"
             class="btn btn-primary py-3 px-5 text-white"
             v-on:click="moveTo"
           >
-            <span class="h1">DOWNLOAD</span>
+            <span class="h4">DOWNLOAD</span>
           </button>
         </div>
       </div>
@@ -29,10 +28,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import YouTube from 'vue3-youtube';
+
 export default defineComponent({
   name: 'slideFisrt',
-  components: { YouTube },
   data() {
     return {
       imgsrc: require('../assets/logo.png'),
