@@ -2,4 +2,8 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu
+    destination: /home/ubuntu/LINKFLIX-deploy
+hooks:
+  AfterInstall:
+    - location: execute.sh
+      timeout: 300

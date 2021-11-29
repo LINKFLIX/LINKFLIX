@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { SaleDto } from '../types';
 
 const instance = axios.create({
-  baseURL: 'https://k5a104.p.ssafy.io:5001/',
+  baseURL: 'https://linkflix.link:5001/',
   timeout: 15000,
 });
 

@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { TimelineDto } from '../types';
 
 const instance = axios.create({
-  baseURL: 'https://k5a104.p.ssafy.io:8081/',
+  baseURL: 'https://linkflix.link:8081/',
   timeout: 15000,
 });
 
