@@ -1,10 +1,10 @@
-# 🎁 LINKFLIX
-
-<div style="text-align: center; margin: 40px 0">
+<br>
+<p align="center">
   <img src="md-images/linkflix-logo.png" width="70%" alt="linkflix"></img>
-</div>
+</p>
+<br>
 
-## 🔅 Introduction
+## 🎁 LINKFLIX
 
 - 현재 시청 중인 넷플릭스 영상 속 제품에 대해서 바로 구매 가능한 사이트로 연결해주는 **크롬 확장 프로그램**입니다.
 - **Link**와 **Netflix**의 합성어로 넷플릭스와 연결된 서비스임을 의미합니다.
