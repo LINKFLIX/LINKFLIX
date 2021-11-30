@@ -1,6 +1,6 @@
 {
   "name": "LINKFLIX",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "manifest_version": 3,
   "description": "We'll connect you to the site where you can purchase the products in the Netflix video you're currently watching.",
   "action": {
