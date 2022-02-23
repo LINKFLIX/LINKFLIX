@@ -40,6 +40,8 @@ Netflix: <https://www.netflix.com>
 
 ## 🖥 Skills
 
+<!-- ![techstack](md-images/techstack.PNG) -->
+
 <!-- ![architecture](md-images/architecture.JPG) -->
 
 - **Front-End**
