@@ -43,7 +43,6 @@ Netflix: <https://www.netflix.com>
 ![architecture](md-images/architecture.JPG)
 
 - **Front-End**
-
   - Language
     - <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/typescript-0000FF?style=for-the-badge&logo=typescript&logoColor=white">
   - Framework / Library
@@ -52,7 +51,6 @@ Netflix: <https://www.netflix.com>
     - <img src="https://img.shields.io/badge/bootstrap-00FF00?style=for-the-badge&logo=bootstrap&logoColor=black">
 
 - **Back-End**
-
   - Language
     - <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=Java&logoColor=black"> <img src="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white">
   - Framework / Library
@@ -60,7 +58,6 @@ Netflix: <https://www.netflix.com>
     - <img src="https://img.shields.io/badge/flask-0C0C0C.svg?&style=for-the-badge&logo=flask&logoColor=white">
 
 - **Deployment**
-
   - <img src="https://img.shields.io/badge/aws-F28202.svg?&style=for-the-badge&logo=aws&logoColor=white"> <img src="https://img.shields.io/badge/docker-05D7F8.svg?&style=for-the-badge&logo=docker&logoColor=white">
 
 - **Collaboration Tools**
